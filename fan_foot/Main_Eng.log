@@ -1,0 +1,665 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          11-NOV-2017 14:40:12 Oracle Database 12c 12.2.0.1.0
+
+Point view at England tables and set England bind variables
+
+View created.
+
+
+View created.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+Top ten solutions for direct recursive query
+
+TOT_PROFIT  TOT_PRICE        RNK PO P_ID PLAYER_NAME          CLUB_NAME            PRICE AVG_POINTS
+---------- ---------- ---------- -- ---- -------------------- --------------- ---------- ----------
+      1973        898          1 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    641  Miguel Michu         Swansea                 79        169
+                                    177  Marouane Fellaini    Everton                 73        168
+      1971        899          2 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    047  Christian Benteke    Aston Villa             74        166
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    641  Miguel Michu         Swansea                 79        169
+      1970        893          3 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    047  Christian Benteke    Aston Villa             74        166
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    177  Marouane Fellaini    Everton                 73        168
+      1968        899          4 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    047  Christian Benteke    Aston Villa             74        166
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    177  Marouane Fellaini    Everton                 73        168
+                                    428  Robert Snodgrass     Norwich                 62        152
+                               5 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    569  Ryan Shawcross       Stoke City              56        133
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    149  Juan Mata            Chelsea                102        190
+                                    641  Miguel Michu         Swansea                 79        169
+                                    177  Marouane Fellaini    Everton                 73        168
+                  900          6 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    204  Dimitar Berbatov     Fulham                  71        161
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    149  Juan Mata            Chelsea                102        190
+                                    177  Marouane Fellaini    Everton                 73        168
+      1966        896          7 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    204  Dimitar Berbatov     Fulham                  71        161
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    641  Miguel Michu         Swansea                 79        169
+                  900          8 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    569  Ryan Shawcross       Stoke City              56        133
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    047  Christian Benteke    Aston Villa             74        166
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    149  Juan Mata            Chelsea                102        190
+                                    641  Miguel Michu         Swansea                 79        169
+      1965        890          9 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    268  Glen Johnson         Liverpool               65        141
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    204  Dimitar Berbatov     Fulham                  71        161
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    265  Steven Gerrard       Liverpool               92        187
+                                    177  Marouane Fellaini    Everton                 73        168
+                  894         10 DF 165  Leighton Baines      Everton                 78        173
+                                    332  Patrice Evra         Man Utd                 73        152
+                                    569  Ryan Shawcross       Stoke City              56        133
+                                 FW 286  Luis Suarez          Liverpool              105        213
+                                    533  Rickie Lambert       Southampton             69        178
+                                    047  Christian Benteke    Aston Villa             74        166
+                                 GK 549  Asmir Begovic        Stoke City              56        154
+                                 MF 661  Gareth Bale          Tottenham              111        240
+                                    030  Santi Santi Cazorla  Arsenal                 97        198
+                                    149  Juan Mata            Chelsea                102        190
+                                    177  Marouane Fellaini    Everton                 73        168
+
+110 rows selected.
+
+Elapsed: 00:00:43.29
+
+PL/SQL procedure successfully completed.
+
+Top ten solutions for query calling pipelined function...
+
+SOL_PROFIT  SOL_PRICE        RNK PO ITEM_ID    PLAYER_NAME          CLUB_NAME            PRICE AVG_POINTS
+---------- ---------- ---------- -- ---------- -------------------- --------------- ---------- ----------
+      1973        898          1 DF 165        Leighton Baines      Everton                 78        173
+                                    268        Glen Johnson         Liverpool               65        141
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 177        Marouane Fellaini    Everton                 73        168
+                                    265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+      1971        899          2 DF 165        Leighton Baines      Everton                 78        173
+                                    268        Glen Johnson         Liverpool               65        141
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    47         Christian Benteke    Aston Villa             74        166
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+      1970        893          3 DF 165        Leighton Baines      Everton                 78        173
+                                    268        Glen Johnson         Liverpool               65        141
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    47         Christian Benteke    Aston Villa             74        166
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 177        Marouane Fellaini    Everton                 73        168
+                                    265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    661        Gareth Bale          Tottenham              111        240
+      1968        899          4 DF 165        Leighton Baines      Everton                 78        173
+                                    332        Patrice Evra         Man Utd                 73        152
+                                    569        Ryan Shawcross       Stoke City              56        133
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 149        Juan Mata            Chelsea                102        190
+                                    177        Marouane Fellaini    Everton                 73        168
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+                  900          5 DF 165        Leighton Baines      Everton                 78        173
+                                    268        Glen Johnson         Liverpool               65        141
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 204        Dimitar Berbatov     Fulham                  71        161
+                                    286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 149        Juan Mata            Chelsea                102        190
+                                    177        Marouane Fellaini    Everton                 73        168
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    661        Gareth Bale          Tottenham              111        240
+      1966        896          6 DF 165        Leighton Baines      Everton                 78        173
+                                    268        Glen Johnson         Liverpool               65        141
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 204        Dimitar Berbatov     Fulham                  71        161
+                                    286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+                  900          7 DF 165        Leighton Baines      Everton                 78        173
+                                    332        Patrice Evra         Man Utd                 73        152
+                                    569        Ryan Shawcross       Stoke City              56        133
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    47         Christian Benteke    Aston Villa             74        166
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 149        Juan Mata            Chelsea                102        190
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+      1965        894          8 DF 165        Leighton Baines      Everton                 78        173
+                                    270        Sanchez Jose Enrique Liverpool               61        133
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 177        Marouane Fellaini    Everton                 73        168
+                                    265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+                  897          9 DF 165        Leighton Baines      Everton                 78        173
+                                    248        Daniel Agger         Liverpool               64        133
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 177        Marouane Fellaini    Everton                 73        168
+                                    265        Steven Gerrard       Liverpool               92        187
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    641        Miguel Michu         Swansea                 79        169
+                                    661        Gareth Bale          Tottenham              111        240
+                  899         10 DF 165        Leighton Baines      Everton                 78        173
+                                    270        Sanchez Jose Enrique Liverpool               61        133
+                                    332        Patrice Evra         Man Utd                 73        152
+                                 FW 286        Luis Suarez          Liverpool              105        213
+                                    47         Christian Benteke    Aston Villa             74        166
+                                    533        Rickie Lambert       Southampton             69        178
+                                 GK 549        Asmir Begovic        Stoke City              56        154
+                                 MF 149        Juan Mata            Chelsea                102        190
+                                    177        Marouane Fellaini    Everton                 73        168
+                                    30         Santi Santi Cazorla  Arsenal                 97        198
+                                    661        Gareth Bale          Tottenham              111        240
+
+110 rows selected.
+
+Elapsed: 00:11:19.99
+
+PL/SQL procedure successfully completed.
+
+
+TEXT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  dc2utgdukrh50, child number 0
+-------------------------------------
+WITH  /* FF_QRY */ position_counts AS ( SELECT Min (CASE WHEN id !=
+'AL' THEN id END) min_id,        Max (CASE id WHEN 'AL' THEN
+min_players END) team_size   FROM positions ), pos_runs AS ( SELECT id,
+Sum (CASE WHEN id != 'AL' THEN min_players END) OVER (ORDER BY id DESC)
+num_remain, min_players, max_players   FROM positions ), players_ranked
+AS ( SELECT id,        position_id,        price,        avg_points,
+    appearances,        Row_Number() OVER (ORDER BY position_id,
+avg_points DESC) rnk,        Min (price) OVER () min_price   FROM
+players ), rsf (path_rnk, nxt_id, lev, tot_price, tot_profit, pos_id,
+n_pos, team_size, min_players, pos_path, path) AS ( SELECT 0, 0, 0, 0,
+0, 'AL', 0, c.team_size, 0, CAST (NULL AS VARCHAR2(400)) pos_path, CAST
+(NULL AS VARCHAR2(400)) path   FROM position_counts c  UNION ALL SELECT
+Row_Number() OVER (PARTITION BY r.pos_path || p.position_id ORDER BY
+r.tot_profit + p.avg_points DESC),        p.rnk,        r.lev + 1,
+  r.tot_price + p.price,
+
+Plan hash value: 276369290
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                        | Name                       | Starts | E-Rows | A-Rows |   A-Time   | Buffers | Reads  | Writes |  OMem |  1Mem | Used-Mem | Used-Tmp|
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                                 |                            |      1 |        |    110 |00:00:43.23 |      32M|  10987 |  10987 |       |       |          |         |
+|   1 |  TEMP TABLE TRANSFORMATION                       |                            |      1 |        |    110 |00:00:43.23 |      32M|  10987 |  10987 |       |       |          |         |
+|   2 |   LOAD AS SELECT (CURSOR DURATION MEMORY)        | SYS_TEMP_0FD9D6716_1339CBC |      1 |        |      0 |00:00:00.01 |       8 |      0 |      0 |  1024 |  1024 |          |         |
+|   3 |    SORT AGGREGATE                                |                            |      1 |      1 |      1 |00:00:00.01 |       7 |      0 |      0 |       |       |          |         |
+|   4 |     TABLE ACCESS FULL                            | EPL_POSITIONS              |      1 |      5 |      5 |00:00:00.01 |       7 |      0 |      0 |       |       |          |         |
+|   5 |   SORT ORDER BY                                  |                            |      1 |      7 |    110 |00:00:43.23 |      32M|  10987 |  10987 | 27648 | 27648 |24576  (0)|         |
+|*  6 |    HASH JOIN                                     |                            |      1 |      7 |    110 |00:00:43.23 |      32M|  10987 |  10987 |  1014K|  1014K| 1188K (0)|         |
+|   7 |     MERGE JOIN CARTESIAN                         |                            |      1 |     10 |    110 |00:00:43.23 |      32M|  10987 |  10987 |       |       |          |         |
+|   8 |      VIEW                                        |                            |      1 |      1 |     11 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|   9 |       CONNECT BY WITHOUT FILTERING               |                            |      1 |        |     11 |00:00:00.01 |       0 |      0 |      0 |  2048 |  2048 | 2048  (0)|         |
+|  10 |        VIEW                                      |                            |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  11 |         TABLE ACCESS FULL                        | SYS_TEMP_0FD9D6716_1339CBC |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  12 |      BUFFER SORT                                 |                            |     11 |     10 |    110 |00:00:43.23 |      32M|  10987 |  10987 |  2048 |  2048 | 2048  (0)|         |
+|* 13 |       VIEW                                       |                            |      1 |     10 |     10 |00:00:43.23 |      32M|  10987 |  10987 |       |       |          |         |
+|* 14 |        WINDOW SORT PUSHED RANK                   |                            |      1 |      2 |     10 |00:00:43.23 |      32M|  10987 |  10987 |  2048 |  2048 | 2048  (0)|         |
+|* 15 |         VIEW                                     |                            |      1 |      2 |    112K|00:00:44.26 |      32M|  10987 |  10987 |       |       |          |         |
+|  16 |          UNION ALL (RECURSIVE WITH) BREADTH FIRST|                            |      1 |        |   1440K|00:00:31.78 |      32M|  10987 |  10987 |    29M|  1949K|   25M (0)|         |
+|  17 |           VIEW                                   |                            |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  18 |            TABLE ACCESS FULL                     | SYS_TEMP_0FD9D6716_1339CBC |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  19 |           WINDOW SORT                            |                            |     12 |      1 |   1440K|00:00:13.69 |     178 |  10987 |  10987 |    41M|  2287K|   37M (0)|         |
+|* 20 |            HASH JOIN                             |                            |     12 |      1 |   1440K|00:00:08.84 |     178 |  10987 |  10987 |    41M|  4559K|   46M (0)|   30720 |
+|  21 |             NESTED LOOPS                         |                            |     12 |      1 |   1621K|00:00:02.48 |     176 |      0 |      0 |       |       |          |         |
+|  22 |              RECURSIVE WITH PUMP                 |                            |     12 |        |   6397 |00:00:00.17 |       0 |      0 |      0 |       |       |          |         |
+|* 23 |              VIEW                                |                            |   6397 |      1 |   1621K|00:00:02.36 |     176 |      0 |      0 |       |       |          |         |
+|  24 |               WINDOW SORT                        |                            |   6397 |    575 |   3684K|00:00:01.53 |     176 |      0 |      0 | 76800 | 76800 |67584  (0)|         |
+|* 25 |                TABLE ACCESS FULL                 | EPL_PLAYERS                |     11 |    575 |   6336 |00:00:00.01 |     176 |      0 |      0 |       |       |          |         |
+|  26 |             BUFFER SORT (REUSE)                  |                            |     11 |        |     55 |00:00:00.01 |       2 |      0 |      0 | 73728 | 73728 |          |         |
+|  27 |              VIEW                                |                            |      1 |      5 |      5 |00:00:00.01 |       2 |      0 |      0 |       |       |          |         |
+|  28 |               WINDOW BUFFER                      |                            |      1 |      5 |      5 |00:00:00.01 |       2 |      0 |      0 |  2048 |  2048 | 2048  (0)|         |
+|  29 |                TABLE ACCESS BY INDEX ROWID       | EPL_POSITIONS              |      1 |      5 |      5 |00:00:00.01 |       2 |      0 |      0 |       |       |          |         |
+|  30 |                 INDEX FULL SCAN DESCENDING       | SYS_C0018117               |      1 |      5 |      5 |00:00:00.01 |       1 |      0 |      0 |       |       |          |         |
+|* 31 |     TABLE ACCESS FULL                            | EPL_PLAYERS                |      1 |    575 |    576 |00:00:00.01 |      16 |      0 |      0 |       |       |          |         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   6 - access("ID"=TO_NUMBER(SUBSTR("PATHS_RANKED"."PATH",("from$_subquery$_012"."PLAYER_INDEX"-1)*3+1,3)))
+  13 - filter("PATHS_RANKED"."R_PROFIT"<=10)
+  14 - filter(ROW_NUMBER() OVER ( ORDER BY INTERNAL_FUNCTION("TOT_PROFIT") DESC ,"TOT_PRICE")<=10)
+  15 - filter("LEV"="TEAM_SIZE")
+  20 - access("M1"."ID"="P"."POSITION_ID")
+       filter(("M1"."MAX_PLAYERS">=CASE "P"."POSITION_ID" WHEN "R"."POS_ID" THEN "R"."N_POS"+1 ELSE 1 END  AND "R"."TEAM_SIZE"-"R"."LEV"-1>="M1"."NUM_REMAIN"-CASE "P"."POSITION_ID"
+              WHEN "R"."POS_ID" THEN ("R"."N_POS"+1) ELSE 1 END ))
+  23 - filter(("R"."TOT_PRICE"+"P"."PRICE"+("R"."TEAM_SIZE"-"R"."LEV"-1)*"P"."MIN_PRICE"<=:MAX_PRICE AND ("R"."LEV"=0 OR "P"."POSITION_ID"="R"."POS_ID" OR
+              "R"."N_POS">="R"."MIN_PLAYERS") AND "P"."RNK">"R"."NXT_ID"))
+  25 - filter("POINTS">0)
+  31 - filter("POINTS">0)
+
+Collected 5 cats
+Collected 576 items
+6 cats
+Hash first price min / profit max 21312 / 138240
+10: price min / profit max 37 / 240
+9: price min / profit max 74 / 453
+8: price min / profit max 111 / 651
+7: price min / profit max 149 / 841
+6: price min / profit max 187 / 1028
+5: price min / profit max 225 / 1206
+4: price min / profit max 263 / 1379
+3: price min / profit max 301 / 1551
+2: price min / profit max 339 / 1722
+1: price min / profit max 377 / 1891
+Price min / profit max 37 / 1320
+Cat 1 : DF - 3 - 5 - 1 - 179
+Cat 2 : FW - 1 - 3 - 180 - 286
+Cat 3 : GK - 1 - 1 - 287 - 330
+Cat 4 : MF - 2 - 5 - 331 - 576
+*********Truncating search after 1000000 recursive calls***
+Profit = 1966, price = 900 items...
+... 165
+... 332
+... 569
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 149
+... 641
+Profit = 1965, price = 899 items...
+... 165
+... 332
+... 270
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 149
+... 177
+Profit = 1965, price = 897 items...
+... 165
+... 332
+... 248
+... 286
+... 533
+... 549
+... 661
+... 30
+... 265
+... 641
+... 177
+Profit = 1971, price = 899 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 265
+... 641
+Profit = 1968, price = 899 items...
+... 165
+... 332
+... 569
+... 286
+... 533
+... 549
+... 661
+... 30
+... 149
+... 641
+... 177
+Profit = 1970, price = 893 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 265
+... 177
+Profit = 1966, price = 896 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 204
+... 549
+... 661
+... 30
+... 265
+... 641
+Profit = 1968, price = 900 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 204
+... 549
+... 661
+... 30
+... 149
+... 177
+Profit = 1973, price = 898 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 549
+... 661
+... 30
+... 265
+... 641
+... 177
+Profit = 1965, price = 894 items...
+... 165
+... 332
+... 270
+... 286
+... 533
+... 549
+... 661
+... 30
+... 265
+... 641
+... 177
+Profit = 1973, price = 898 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 549
+... 661
+... 30
+... 265
+... 641
+... 177
+Profit = 1971, price = 899 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 265
+... 641
+Profit = 1970, price = 893 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 265
+... 177
+Profit = 1968, price = 899 items...
+... 165
+... 332
+... 569
+... 286
+... 533
+... 549
+... 661
+... 30
+... 149
+... 641
+... 177
+Profit = 1968, price = 900 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 204
+... 549
+... 661
+... 30
+... 149
+... 177
+Profit = 1966, price = 900 items...
+... 165
+... 332
+... 569
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 149
+... 641
+Profit = 1966, price = 896 items...
+... 165
+... 332
+... 268
+... 286
+... 533
+... 204
+... 549
+... 661
+... 30
+... 265
+... 641
+Profit = 1965, price = 894 items...
+... 165
+... 332
+... 270
+... 286
+... 533
+... 549
+... 661
+... 30
+... 265
+... 641
+... 177
+Profit = 1965, price = 899 items...
+... 165
+... 332
+... 270
+... 286
+... 533
+... 47
+... 549
+... 661
+... 30
+... 149
+... 177
+Profit = 1965, price = 897 items...
+31014833 solutions found in 1000001 recursive calls
+
+Timer Set: Best_N_Sets, Constructed at 11 Nov 2017 14:40:56, written at 14:52:16
+================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000006), CPU (per call): 0.01 (0.000010), calls: 1000, '***' denotes corrected line below]
+
+Timer            Elapsed         CPU         Calls       Ela/Call       CPU/Call
+------------  ----------  ----------  ------------  -------------  -------------
+Pop_Arrays          0.02        0.04             1        0.02400        0.04000
+Try_Position      679.84      679.51             1      679.84400      679.51000
+Write_Sols          0.02        0.02             1        0.02100        0.02000
+Pipe                0.00        0.00             1        0.00100        0.00000
+(Other)             0.00        0.00             1        0.00000        0.00000
+------------  ----------  ----------  ------------  -------------  -------------
+Total             679.89      679.57             5      135.97800      135.91400
+------------  ----------  ----------  ------------  -------------  -------------
+
+Timer Set: Try_Position, Constructed at 11 Nov 2017 14:40:56, written at 14:52:16
+=================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000007), CPU (per call): 0.00 (0.000000), calls: 1000, '***' denotes corrected line below]
+
+Timer       Elapsed         CPU         Calls       Ela/Call       CPU/Call
+-------  ----------  ----------  ------------  -------------  -------------
+(Other)      679.90      679.58             1      679.89800      679.58000
+-------  ----------  ----------  ------------  -------------  -------------
+Total        679.90      679.58             1      679.89800      679.58000
+-------  ----------  ----------  ------------  -------------  -------------
+SQL_ID  f35p9zgppq7qk, child number 0
+-------------------------------------
+SELECT  /*+ gather_plan_statistics FF_PLF */        t.sol_profit,
+ t.sol_price,        Dense_Rank() OVER (ORDER BY t.sol_profit DESC,
+t.sol_price) RNK,        p.position_id,        t.item_id,
+p.player_name,        p.club_name,        p.price,        p.avg_points
+ FROM TABLE (Item_Cats.Best_N_Sets (                   p_keep_size =>
+:KEEP_NUM,                   p_max_calls => 1000000,
+p_n_size => 10,                   p_max_price => :MAX_PRICE,
+       p_cat_cur => CURSOR (                       SELECT id,
+min_players, max_players                         FROM positions
+               ORDER BY CASE WHEN id != 'AL' THEN 0 END, id
+          ),                   p_item_cur => CURSOR (
+    SELECT id, price, avg_points, position_id
+FROM players                        ORDER BY position_id, avg_points
+DESC                       )              )) t   JOIN players p     ON
+p.id = t.item_id   ORD
+
+Plan hash value: 542202847
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                             | Name          | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+--------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                      |               |      1 |        |    110 |00:04:49.74 |    2039 |       |       |          |
+|   1 |  WINDOW SORT                          |               |      1 |   5538 |    110 |00:04:49.74 |    2039 | 20480 | 20480 |18432  (0)|
+|   2 |   VIEW                                |               |      1 |   5538 |    110 |00:04:49.72 |    2039 |       |       |          |
+|*  3 |    HASH JOIN                          |               |      1 |   5538 |    110 |00:04:49.72 |    2039 |  1123K|  1123K| 1359K (0)|
+|   4 |     VIEW                              | PLAYERS       |      1 |    575 |    576 |00:00:00.01 |      16 |       |       |          |
+|*  5 |      TABLE ACCESS FULL                | EPL_PLAYERS   |      1 |    575 |    576 |00:00:00.01 |      16 |       |       |          |
+|   6 |     VIEW                              |               |      1 |   8168 |    110 |00:04:49.72 |    2023 |       |       |          |
+|   7 |      COLLECTION ITERATOR PICKLER FETCH| BEST_N_SETS   |      1 |   8168 |    110 |00:04:49.72 |    2023 |       |       |          |
+|   8 |       SORT ORDER BY                   |               |      0 |      5 |      0 |00:00:00.01 |       0 | 73728 | 73728 |          |
+|   9 |        VIEW                           | POSITIONS     |      0 |      5 |      0 |00:00:00.01 |       0 |       |       |          |
+|  10 |         TABLE ACCESS FULL             | EPL_POSITIONS |      0 |      5 |      0 |00:00:00.01 |       0 |       |       |          |
+|  11 |       SORT ORDER BY                   |               |      0 |    575 |      0 |00:00:00.01 |       0 | 73728 | 73728 |          |
+|  12 |        VIEW                           | PLAYERS       |      0 |    575 |      0 |00:00:00.01 |       0 |       |       |          |
+|* 13 |         TABLE ACCESS FULL             | EPL_PLAYERS   |      0 |    575 |      0 |00:00:00.01 |       0 |       |       |          |
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   3 - access("P"."ID"=TO_NUMBER("T"."SYS_NC_ROWINFO$"."ITEM_ID"))
+   5 - filter("POINTS">0)
+  13 - filter("POINTS">0)
+
+
+394 rows selected.
+
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 11-NOV-2017 14:52:16
+

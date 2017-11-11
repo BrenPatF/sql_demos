@@ -1,0 +1,579 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          11-NOV-2017 14:39:25 Oracle Database 12c 12.2.0.1.0
+
+Point view at Brazil tables and set Brazil bind variables
+
+View created.
+
+
+View dropped.
+
+
+View created.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+Top ten solutions for direct recursive query
+
+TOT_PROFIT  TOT_PRICE        RNK PO P_ID PLAYER_NAME          CLUB_NAME            PRICE AVG_POINTS
+---------- ---------- ---------- -- ---- -------------------- --------------- ---------- ----------
+     10923      18176          1 CB 098  Digão                Fluminense             931        927
+                                    099  Samir                Flamengo               267        680
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 022  Wilson               Vitória               1239        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+                19027          2 CB 098  Digão                Fluminense             931        927
+                                    099  Samir                Flamengo               267        680
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 021  Fábio                Cruzeiro              2090        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+     10905      18795          3 CB 098  Digão                Fluminense             931        927
+                                    099  Samir                Flamengo               267        680
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 023  Vanderlei            Coritiba              1858        776
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+     10833      18994          4 CB 098  Digão                Fluminense             931        927
+                                    102  Bressan              Grêmio                1085        590
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 022  Wilson               Vitória               1239        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+                19845          5 CB 098  Digão                Fluminense             931        927
+                                    102  Bressan              Grêmio                1085        590
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 021  Fábio                Cruzeiro              2090        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+     10831      19608          6 CB 098  Digão                Fluminense             931        927
+                                    103  Manoel               Atlético-PR           1699        588
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 022  Wilson               Vitória               1239        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+     10825      18190          7 CB 098  Digão                Fluminense             931        927
+                                    099  Samir                Flamengo               267        680
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 022  Wilson               Vitória               1239        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    040  Egídio               Cruzeiro              1482        752
+                19041          8 CB 098  Digão                Fluminense             931        927
+                                    099  Samir                Flamengo               267        680
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 021  Fábio                Cruzeiro              2090        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    040  Egídio               Cruzeiro              1482        752
+     10821      19370          9 CB 098  Digão                Fluminense             931        927
+                                    104  Cléber               Ponte Preta           1461        578
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 022  Wilson               Vitória               1239        794
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+     10815      19613         10 CB 098  Digão                Fluminense             931        927
+                                    102  Bressan              Grêmio                1085        590
+                                 CO 078  Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001  Éderson              Atlético-PR           1712       1012
+                                    002  Maxi Biancucchi      Vitória               1962       1005
+                                    003  Rafael Sobis         Fluminense            2303        955
+                                 GK 023  Vanderlei            Coritiba              1858        776
+                                 MF 058  Fred                 Internacional         3028        892
+                                    059  Zé Roberto           Grêmio                2593        878
+                                    060  Otavinho             Internacional          762        807
+                                 WB 038  Ivan                 Portuguesa             755       1320
+                                    039  Elsinho              Vasco                 1468        850
+
+120 rows selected.
+
+Elapsed: 00:00:14.74
+
+PL/SQL procedure successfully completed.
+
+Top ten solutions for query calling pipelined function...
+
+SOL_PROFIT  SOL_PRICE        RNK PO ITEM_ID    PLAYER_NAME          CLUB_NAME            PRICE AVG_POINTS
+---------- ---------- ---------- -- ---------- -------------------- --------------- ---------- ----------
+     10923      18176          1 CB 098        Digão                Fluminense             931        927
+                                    099        Samir                Flamengo               267        680
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 022        Wilson               Vitória               1239        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+                19027          2 CB 098        Digão                Fluminense             931        927
+                                    099        Samir                Flamengo               267        680
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 021        Fábio                Cruzeiro              2090        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+     10905      18795          3 CB 098        Digão                Fluminense             931        927
+                                    099        Samir                Flamengo               267        680
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 023        Vanderlei            Coritiba              1858        776
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+     10833      18994          4 CB 098        Digão                Fluminense             931        927
+                                    102        Bressan              Grêmio                1085        590
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 022        Wilson               Vitória               1239        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+                19845          5 CB 098        Digão                Fluminense             931        927
+                                    102        Bressan              Grêmio                1085        590
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 021        Fábio                Cruzeiro              2090        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+     10831      19608          6 CB 098        Digão                Fluminense             931        927
+                                    103        Manoel               Atlético-PR           1699        588
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 022        Wilson               Vitória               1239        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+     10825      18190          7 CB 098        Digão                Fluminense             931        927
+                                    099        Samir                Flamengo               267        680
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 022        Wilson               Vitória               1239        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    040        Egídio               Cruzeiro              1482        752
+                19041          8 CB 098        Digão                Fluminense             931        927
+                                    099        Samir                Flamengo               267        680
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 021        Fábio                Cruzeiro              2090        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    040        Egídio               Cruzeiro              1482        752
+     10821      19370          9 CB 098        Digão                Fluminense             931        927
+                                    104        Cléber               Ponte Preta           1461        578
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 022        Wilson               Vitória               1239        794
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+     10815      19613         10 CB 098        Digão                Fluminense             931        927
+                                    102        Bressan              Grêmio                1085        590
+                                 CO 078        Jaime De AlMFda      Flamengo              1156        803
+                                 FW 001        Éderson              Atlético-PR           1712       1012
+                                    002        Maxi Biancucchi      Vitória               1962       1005
+                                    003        Rafael Sobis         Fluminense            2303        955
+                                 GK 023        Vanderlei            Coritiba              1858        776
+                                 MF 058        Fred                 Internacional         3028        892
+                                    059        Zé Roberto           Grêmio                2593        878
+                                    060        Otavinho             Internacional          762        807
+                                 WB 038        Ivan                 Portuguesa             755       1320
+                                    039        Elsinho              Vasco                 1468        850
+
+120 rows selected.
+
+Elapsed: 00:00:01.76
+
+PL/SQL procedure successfully completed.
+
+
+TEXT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  dc2utgdukrh50, child number 0
+-------------------------------------
+WITH  /* FF_QRY */ position_counts AS ( SELECT Min (CASE WHEN id !=
+'AL' THEN id END) min_id,        Max (CASE id WHEN 'AL' THEN
+min_players END) team_size   FROM positions ), pos_runs AS ( SELECT id,
+Sum (CASE WHEN id != 'AL' THEN min_players END) OVER (ORDER BY id DESC)
+num_remain, min_players, max_players   FROM positions ), players_ranked
+AS ( SELECT id,        position_id,        price,        avg_points,
+    appearances,        Row_Number() OVER (ORDER BY position_id,
+avg_points DESC) rnk,        Min (price) OVER () min_price   FROM
+players ), rsf (path_rnk, nxt_id, lev, tot_price, tot_profit, pos_id,
+n_pos, team_size, min_players, pos_path, path) AS ( SELECT 0, 0, 0, 0,
+0, 'AL', 0, c.team_size, 0, CAST (NULL AS VARCHAR2(400)) pos_path, CAST
+(NULL AS VARCHAR2(400)) path   FROM position_counts c  UNION ALL SELECT
+Row_Number() OVER (PARTITION BY r.pos_path || p.position_id ORDER BY
+r.tot_profit + p.avg_points DESC),        p.rnk,        r.lev + 1,
+  r.tot_price + p.price,
+
+Plan hash value: 223509696
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                        | Name                       | Starts | E-Rows | A-Rows |   A-Time   | Buffers | Reads  | Writes |  OMem |  1Mem | Used-Mem | Used-Tmp|
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                                 |                            |      1 |        |    120 |00:00:14.68 |    7582K|   1718 |   1718 |       |       |          |         |
+|   1 |  TEMP TABLE TRANSFORMATION                       |                            |      1 |        |    120 |00:00:14.68 |    7582K|   1718 |   1718 |       |       |          |         |
+|   2 |   LOAD AS SELECT (CURSOR DURATION MEMORY)        | SYS_TEMP_0FD9D6715_1339CBC |      1 |        |      0 |00:00:00.01 |       8 |      0 |      0 |  1024 |  1024 |          |         |
+|   3 |    SORT AGGREGATE                                |                            |      1 |      1 |      1 |00:00:00.01 |       7 |      0 |      0 |       |       |          |         |
+|   4 |     TABLE ACCESS FULL                            | BRAZIL_POSITIONS           |      1 |      7 |      7 |00:00:00.01 |       7 |      0 |      0 |       |       |          |         |
+|   5 |   SORT ORDER BY                                  |                            |      1 |     10 |    120 |00:00:14.68 |    7582K|   1718 |   1718 | 27648 | 27648 |24576  (0)|         |
+|*  6 |    HASH JOIN                                     |                            |      1 |     10 |    120 |00:00:14.68 |    7582K|   1718 |   1718 |  1132K|  1132K| 1332K (0)|         |
+|*  7 |     TABLE ACCESS FULL                            | BRAZIL_PLAYERS             |      1 |    114 |    114 |00:00:00.01 |       7 |      0 |      0 |       |       |          |         |
+|   8 |     MERGE JOIN CARTESIAN                         |                            |      1 |     10 |    120 |00:00:14.68 |    7582K|   1718 |   1718 |       |       |          |         |
+|   9 |      VIEW                                        |                            |      1 |      1 |     12 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  10 |       CONNECT BY WITHOUT FILTERING               |                            |      1 |        |     12 |00:00:00.01 |       0 |      0 |      0 |  2048 |  2048 | 2048  (0)|         |
+|  11 |        VIEW                                      |                            |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  12 |         TABLE ACCESS FULL                        | SYS_TEMP_0FD9D6715_1339CBC |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  13 |      BUFFER SORT                                 |                            |     12 |     10 |    120 |00:00:14.68 |    7582K|   1718 |   1718 |  2048 |  2048 | 2048  (0)|         |
+|* 14 |       VIEW                                       |                            |      1 |     10 |     10 |00:00:14.68 |    7582K|   1718 |   1718 |       |       |          |         |
+|* 15 |        WINDOW SORT PUSHED RANK                   |                            |      1 |      2 |     10 |00:00:14.68 |    7582K|   1718 |   1718 |  2048 |  2048 | 2048  (0)|         |
+|* 16 |         VIEW                                     |                            |      1 |      2 |  22275 |00:00:14.64 |    7582K|   1718 |   1718 |       |       |          |         |
+|  17 |          UNION ALL (RECURSIVE WITH) BREADTH FIRST|                            |      1 |        |    446K|00:00:09.19 |    7582K|   1718 |   1718 |  8345K|  1135K| 7417K (0)|         |
+|  18 |           VIEW                                   |                            |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  19 |            TABLE ACCESS FULL                     | SYS_TEMP_0FD9D6715_1339CBC |      1 |      1 |      1 |00:00:00.01 |       0 |      0 |      0 |       |       |          |         |
+|  20 |           WINDOW SORT                            |                            |     13 |      1 |    446K|00:00:06.81 |      86 |   1718 |   1718 |    11M|  1320K|   10M (0)|         |
+|* 21 |            HASH JOIN                             |                            |     13 |      1 |    446K|00:00:04.58 |      86 |   1718 |   1718 |    13M|  2272K|   15M (0)|    7168 |
+|  22 |             NESTED LOOPS                         |                            |     13 |      1 |    588K|00:00:01.68 |      84 |      0 |      0 |       |       |          |         |
+|  23 |              RECURSIVE WITH PUMP                 |                            |     13 |        |  23671 |00:00:00.07 |       0 |      0 |      0 |       |       |          |         |
+|* 24 |              VIEW                                |                            |  23671 |      1 |    588K|00:00:01.62 |      84 |      0 |      0 |       |       |          |         |
+|  25 |               WINDOW SORT                        |                            |  23671 |    114 |   2698K|00:00:01.05 |      84 |      0 |      0 | 11264 | 11264 |10240  (0)|         |
+|* 26 |                TABLE ACCESS FULL                 | BRAZIL_PLAYERS             |     12 |    114 |   1368 |00:00:00.01 |      84 |      0 |      0 |       |       |          |         |
+|  27 |             BUFFER SORT (REUSE)                  |                            |     12 |        |     84 |00:00:00.01 |       2 |      0 |      0 | 73728 | 73728 |          |         |
+|  28 |              VIEW                                |                            |      1 |      7 |      7 |00:00:00.01 |       2 |      0 |      0 |       |       |          |         |
+|  29 |               WINDOW BUFFER                      |                            |      1 |      7 |      7 |00:00:00.01 |       2 |      0 |      0 |  2048 |  2048 | 2048  (0)|         |
+|  30 |                TABLE ACCESS BY INDEX ROWID       | BRAZIL_POSITIONS           |      1 |      7 |      7 |00:00:00.01 |       2 |      0 |      0 |       |       |          |         |
+|  31 |                 INDEX FULL SCAN DESCENDING       | SYS_C0018115               |      1 |      7 |      7 |00:00:00.01 |       1 |      0 |      0 |       |       |          |         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   6 - access("ID"=SUBSTR("PATHS_RANKED"."PATH",("from$_subquery$_012"."PLAYER_INDEX"-1)*3+1,3))
+   7 - filter("AVG_POINTS">0)
+  14 - filter("PATHS_RANKED"."R_PROFIT"<=10)
+  15 - filter(ROW_NUMBER() OVER ( ORDER BY INTERNAL_FUNCTION("TOT_PROFIT") DESC ,"TOT_PRICE")<=10)
+  16 - filter("LEV"="TEAM_SIZE")
+  21 - access("M1"."ID"="P"."POSITION_ID")
+       filter(("M1"."MAX_PLAYERS">=CASE "P"."POSITION_ID" WHEN "R"."POS_ID" THEN "R"."N_POS"+1 ELSE 1 END  AND "R"."TEAM_SIZE"-"R"."LEV"-1>="M1"."NUM_REMAIN"-CASE "P"."POSITION_ID"
+              WHEN "R"."POS_ID" THEN ("R"."N_POS"+1) ELSE 1 END ))
+  24 - filter(("R"."TOT_PRICE"+"P"."PRICE"+("R"."TEAM_SIZE"-"R"."LEV"-1)*"P"."MIN_PRICE"<=:MAX_PRICE AND ("R"."LEV"=0 OR "P"."POSITION_ID"="R"."POS_ID" OR
+              "R"."N_POS">="R"."MIN_PLAYERS") AND "P"."RNK">"R"."NXT_ID"))
+  26 - filter("AVG_POINTS">0)
+
+Collected 7 cats
+Collected 114 items
+ cats
+Hash first price min / profit max 30438 / 150480
+11: price min / profit max 267 / 1320
+10: price min / profit max 634 / 2332
+9: price min / profit max 1008 / 3337
+8: price min / profit max 1437 / 4292
+7: price min / profit max 1889 / 5219
+6: price min / profit max 2349 / 6111
+5: price min / profit max 2896 / 6989
+4: price min / profit max 3452 / 7839
+3: price min / profit max 4039 / 8661
+2: price min / profit max 4655 / 9468
+1: price min / profit max 5293 / 10271
+Price min / profit max 267 / 1320
+Cat 1 : CB - 2 - 3 - 1 - 17
+Cat 2 : CO - 1 - 1 - 18 - 37
+Cat 3 : FW - 1 - 3 - 38 - 57
+Cat 4 : GK - 1 - 1 - 58 - 74
+Cat 5 : MF - 3 - 5 - 75 - 94
+Cat 6 : WB - 0 - 2 - 95 - 114
+Profit = 10923, price = 19027 items...
+... 098
+... 099
+... 078
+... 001
+... 002
+... 003
+... 021
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10923, price = 18176 items...
+... 098
+... 099
+... 078
+... 001
+... 002
+... 003
+... 022
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10905, price = 18795 items...
+... 098
+... 099
+... 078
+... 001
+... 002
+... 003
+... 023
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10833, price = 19845 items...
+... 098
+... 102
+... 078
+... 001
+... 002
+... 003
+... 021
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10833, price = 18994 items...
+... 098
+... 102
+... 078
+... 001
+... 002
+... 003
+... 022
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10831, price = 19608 items...
+... 098
+... 103
+... 078
+... 001
+... 002
+... 003
+... 022
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10825, price = 19041 items...
+... 098
+... 099
+... 078
+... 001
+... 002
+... 003
+... 021
+... 058
+... 059
+... 060
+... 038
+... 040
+Profit = 10825, price = 18190 items...
+... 098
+... 099
+... 078
+... 001
+... 002
+... 003
+... 022
+... 058
+... 059
+... 060
+... 038
+... 040
+Profit = 10821, price = 19370 items...
+... 098
+... 104
+... 078
+... 001
+... 002
+... 003
+... 022
+... 058
+... 059
+... 060
+... 038
+... 039
+Profit = 10815, price = 19613 items...
+7163 solutions found in 29697 recursive calls
+
+Timer Set: Best_N_Sets, Constructed at 11 Nov 2017 14:39:39, written at 14:39:41
+================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000007), CPU (per call): 0.02 (0.000020), calls: 1000, '***' denotes corrected line below]
+
+Timer            Elapsed         CPU         Calls       Ela/Call       CPU/Call
+------------  ----------  ----------  ------------  -------------  -------------
+Pop_Arrays          0.01        0.02             1        0.00500        0.02000
+Try_Position        1.65        1.65             1        1.65400        1.65000
+Write_Sols          0.01        0.00             1        0.01000        0.00000
+Pipe                0.00        0.00             1        0.00100        0.00000
+(Other)             0.00        0.00             1        0.00000        0.00000
+------------  ----------  ----------  ------------  -------------  -------------
+Total               1.67        1.67             5        0.33400        0.33400
+------------  ----------  ----------  ------------  -------------  -------------
+
+Timer Set: Try_Position, Constructed at 11 Nov 2017 14:39:39, written at 14:39:41
+=================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000007), CPU (per call): 0.00 (0.000000), calls: 1000, '***' denotes corrected line below]
+
+Timer       Elapsed         CPU         Calls       Ela/Call       CPU/Call
+-------  ----------  ----------  ------------  -------------  -------------
+(Other)        1.68        1.69             1        1.67800        1.69000
+-------  ----------  ----------  ------------  -------------  -------------
+Total          1.68        1.69             1        1.67800        1.69000
+-------  ----------  ----------  ------------  -------------  -------------
+SQL_ID  f35p9zgppq7qk, child number 0
+-------------------------------------
+SELECT  /*+ gather_plan_statistics FF_PLF */        t.sol_profit,
+ t.sol_price,        Dense_Rank() OVER (ORDER BY t.sol_profit DESC,
+t.sol_price) RNK,        p.position_id,        t.item_id,
+p.player_name,        p.club_name,        p.price,        p.avg_points
+ FROM TABLE (Item_Cats.Best_N_Sets (                   p_keep_size =>
+:KEEP_NUM,                   p_max_calls => 1000000,
+p_n_size => 10,                   p_max_price => :MAX_PRICE,
+       p_cat_cur => CURSOR (                       SELECT id,
+min_players, max_players                         FROM positions
+               ORDER BY CASE WHEN id != 'AL' THEN 0 END, id
+          ),                   p_item_cur => CURSOR (
+    SELECT id, price, avg_points, position_id
+FROM players                        ORDER BY position_id, avg_points
+DESC                       )              )) t   JOIN players p     ON
+p.id = t.item_id   ORD
+
+Plan hash value: 4267958858
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                             | Name             | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                      |                  |      1 |        |    120 |00:00:01.71 |    1242 |       |       |          |
+|   1 |  WINDOW SORT                          |                  |      1 |   8168 |    120 |00:00:01.71 |    1242 | 15360 | 15360 |14336  (0)|
+|   2 |   VIEW                                |                  |      1 |   8168 |    120 |00:00:01.69 |    1242 |       |       |          |
+|*  3 |    HASH JOIN                          |                  |      1 |   8168 |    120 |00:00:01.69 |    1242 |  1132K|  1132K| 1328K (0)|
+|   4 |     VIEW                              | PLAYERS          |      1 |    114 |    114 |00:00:00.01 |       7 |       |       |          |
+|*  5 |      TABLE ACCESS FULL                | BRAZIL_PLAYERS   |      1 |    114 |    114 |00:00:00.01 |       7 |       |       |          |
+|   6 |     VIEW                              |                  |      1 |   8168 |    120 |00:00:01.67 |    1235 |       |       |          |
+|   7 |      COLLECTION ITERATOR PICKLER FETCH| BEST_N_SETS      |      1 |   8168 |    120 |00:00:01.67 |    1235 |       |       |          |
+|   8 |       SORT ORDER BY                   |                  |      0 |      7 |      0 |00:00:00.01 |       0 | 73728 | 73728 |          |
+|   9 |        VIEW                           | POSITIONS        |      0 |      7 |      0 |00:00:00.01 |       0 |       |       |          |
+|  10 |         TABLE ACCESS FULL             | BRAZIL_POSITIONS |      0 |      7 |      0 |00:00:00.01 |       0 |       |       |          |
+|  11 |       SORT ORDER BY                   |                  |      0 |    114 |      0 |00:00:00.01 |       0 | 73728 | 73728 |          |
+|  12 |        VIEW                           | PLAYERS          |      0 |    114 |      0 |00:00:00.01 |       0 |       |       |          |
+|* 13 |         TABLE ACCESS FULL             | BRAZIL_PLAYERS   |      0 |    114 |      0 |00:00:00.01 |       0 |       |       |          |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   3 - access("P"."ID"="T"."SYS_NC_ROWINFO$"."ITEM_ID")
+   5 - filter("AVG_POINTS">0)
+  13 - filter("AVG_POINTS">0)
+
+
+285 rows selected.
+
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 11-NOV-2017 14:39:41
+

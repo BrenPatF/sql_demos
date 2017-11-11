@@ -1,0 +1,96 @@
+Common tables creation
+======================
+Create table log_headers
+DROP TABLE log_lines
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE log_headers
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Insert the default log header
+
+1 row created.
+
+
+Synonym created.
+
+
+Grant succeeded.
+
+DROP SEQUENCE log_headers_s
+              *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+
+Sequence created.
+
+Create table log_lines
+
+Table created.
+
+
+Synonym created.
+
+
+Grant succeeded.
+
+DROP SEQUENCE log_lines_s
+              *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+
+Sequence created.
+
+Create type L1_chr_arr
+
+Type created.
+
+Create type L1_num_arr
+
+Type created.
+
+Packages creation
+=================
+Create package Utils
+
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+Create package Timer_Set
+
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+Synonym created.
+
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+

@@ -1,0 +1,1 @@
+sqlplus bren/bren@orclpdb

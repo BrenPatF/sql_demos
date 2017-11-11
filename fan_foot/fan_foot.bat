@@ -1,0 +1,1 @@
+sqlplus fan_foot/fan_foot@orclpdb

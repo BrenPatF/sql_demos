@@ -1,0 +1,93 @@
+
+'START:'||TO_CHAR(SYSDATE,'DD-MON-YY
+------------------------------------
+Start: 11-NOV-2017 09:17:48
+
+Create Brazil tables...
+DROP TABLE brazil_positions
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+DROP TABLE brazil_players
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Insert Brazil data
+
+PL/SQL procedure successfully completed.
+
+Create EPL tables...
+Table epl_positions
+DROP TABLE epl_positions
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+External table player_matches_ext pointing to stats.txt
+DROP TABLE player_matches_ext
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Table epl_players
+DROP TABLE epl_players
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Insert EPL data...
+Insert EPL positions
+
+PL/SQL procedure successfully completed.
+
+Insert EPL PLAYERS
+
+849 rows created.
+
+
+  COUNT(*)
+----------
+       576
+
+Delete Gervino as Forward
+
+1 row deleted.
+
+
+Index created.
+
+
+  COUNT(*)
+----------
+       576
+
+
+PL/SQL procedure successfully completed.
+
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 11-NOV-2017 09:17:49
+

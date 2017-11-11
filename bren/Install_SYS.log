@@ -1,0 +1,147 @@
+old   1: CREATE USER &DEMO_USER IDENTIFIED BY &DEMO_USER
+new   1: CREATE USER bren IDENTIFIED BY bren
+
+User created.
+
+old   1: GRANT CREATE SESSION TO &DEMO_USER
+new   1: GRANT CREATE SESSION TO bren
+
+Grant succeeded.
+
+old   1: GRANT ALTER SESSION TO &DEMO_USER
+new   1: GRANT ALTER SESSION TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE TABLE TO &DEMO_USER
+new   1: GRANT CREATE TABLE TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE TYPE TO &DEMO_USER
+new   1: GRANT CREATE TYPE TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE PUBLIC SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE PUBLIC SYNONYM TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE SYNONYM TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE SEQUENCE TO &DEMO_USER
+new   1: GRANT CREATE SEQUENCE TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE VIEW TO &DEMO_USER
+new   1: GRANT CREATE VIEW TO bren
+
+Grant succeeded.
+
+old   1: GRANT UNLIMITED TABLESPACE TO &DEMO_USER
+new   1: GRANT UNLIMITED TABLESPACE TO bren
+
+Grant succeeded.
+
+old   1: GRANT CREATE PROCEDURE TO &DEMO_USER
+new   1: GRANT CREATE PROCEDURE TO bren
+
+Grant succeeded.
+
+old   1: CREATE USER &DEMO_USER IDENTIFIED BY &DEMO_USER
+new   1: CREATE USER fan_foot IDENTIFIED BY fan_foot
+
+User created.
+
+old   1: GRANT CREATE SESSION TO &DEMO_USER
+new   1: GRANT CREATE SESSION TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT ALTER SESSION TO &DEMO_USER
+new   1: GRANT ALTER SESSION TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE TABLE TO &DEMO_USER
+new   1: GRANT CREATE TABLE TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE TYPE TO &DEMO_USER
+new   1: GRANT CREATE TYPE TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE PUBLIC SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE PUBLIC SYNONYM TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE SYNONYM TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE SEQUENCE TO &DEMO_USER
+new   1: GRANT CREATE SEQUENCE TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE VIEW TO &DEMO_USER
+new   1: GRANT CREATE VIEW TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT UNLIMITED TABLESPACE TO &DEMO_USER
+new   1: GRANT UNLIMITED TABLESPACE TO fan_foot
+
+Grant succeeded.
+
+old   1: GRANT CREATE PROCEDURE TO &DEMO_USER
+new   1: GRANT CREATE PROCEDURE TO fan_foot
+
+Grant succeeded.
+
+DIRECTORY input_dir - C:\input *** Change this if necessary, read access required ***
+
+Directory created.
+
+Grants to bren
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+Role demo_user
+CREATE ROLE demo_user
+            *
+ERROR at line 1:
+ORA-01921: role name 'DEMO_USER' conflicts with another user or role name
+
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+
+Grant succeeded.
+
+Grant role demo_user to demo schemas
+
+Grant succeeded.
+
