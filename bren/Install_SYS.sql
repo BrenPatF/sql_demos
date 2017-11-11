@@ -43,7 +43,7 @@ GRANT SELECT ON v_$sql_plan TO bren -- for xplan outlines
 PROMPT Role demo_user
 CREATE ROLE demo_user
 /
-GRANT READ ON DIRECTORY input_dir TO demo_user
+GRANT ALL ON DIRECTORY input_dir TO demo_user
 /
 GRANT SELECT ON v_$database TO demo_user
 /
