@@ -13,6 +13,7 @@ Description: SYS installation script for the sql_demos GitHub project
 
              To be run from SYS schema before Install_bren.sql, then problem-specific schemas:
                 Install_Fan_Foot.sql - from fan_foot schema
+                Install_TSP.sql - from tsp schema
 
 Further details: 
 

@@ -1,0 +1,463 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          12-NOV-2017 15:33:37 Oracle Database 12c 12.1.0.2.0
+
+Create Emland tables...
+
+Sequence dropped.
+
+
+Sequence created.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table created.
+
+Insert Emland data
+
+PL/SQL procedure successfully completed.
+
+
+20 rows created.
+
+Towns
+
+        ID NAME                     X          Y
+---------- --------------- ---------- ----------
+         1 Left Floor               0          0
+         2 Left Peak                1          2
+         3 Midfield                 2          1
+         4 Right Peak               3          2
+         5 Right Floor              4          0
+
+Distances
+
+   A NAME_A                            B NAME_B                                DST
+---- ------------------------------ ---- ------------------------------ ----------
+   1 Left Floor                        2 Left Peak                      2.23606798
+                                       3 Midfield                       2.23606798
+                                       4 Right Peak                     3.60555128
+                                       5 Right Floor                             4
+   2 Left Peak                         1 Left Floor                     2.23606798
+                                       3 Midfield                       1.41421356
+                                       4 Right Peak                              2
+                                       5 Right Floor                    3.60555128
+   3 Midfield                          1 Left Floor                     2.23606798
+                                       2 Left Peak                      1.41421356
+                                       4 Right Peak                     1.41421356
+                                       5 Right Floor                    2.23606798
+   4 Right Peak                        1 Left Floor                     3.60555128
+                                       2 Left Peak                               2
+                                       3 Midfield                       1.41421356
+                                       5 Right Floor                    2.23606798
+   5 Right Floor                       1 Left Floor                              4
+                                       2 Left Peak                      3.60555128
+                                       3 Midfield                       2.23606798
+                                       4 Right Peak                     2.23606798
+
+20 rows selected.
+
+Create usca312 tables...
+
+Sequence dropped.
+
+
+Sequence created.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Sequence dropped.
+
+
+Sequence created.
+
+
+312 rows created.
+
+
+Sequence dropped.
+
+
+Sequence created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+312 rows created.
+
+
+312 rows updated.
+
+
+97032 rows created.
+
+Towns
+
+        ID NAME                                    X          Y
+---------- ------------------------------ ---------- ----------
+         1 Abilene, TX                      -6890.91    2242.06
+         2 Akron, OH                        -5632.62    2838.55
+         3 Albany, NY                       -5096.27     2947.1
+         4 Albuquerque, NM                  -7369.09    2424.18
+         5 Alert, NT                        -4303.32    5701.62
+         6 Allentown, PA                    -5216.07    2805.86
+         7 Amarillo, TX                     -7036.07    2433.68
+         8 Anchorage, AK                    -10357.5     4229.9
+         9 Ann Arbor, MI                    -5785.13    2920.73
+        10 Asheville, NC                    -5704.14    2459.86
+        11 Ashland, KY                      -5709.93    2658.69
+        12 Atlanta, GA                      -5830.85     2331.9
+        13 Atlantic City, NJ                -5142.33    2719.89
+        14 Augusta, GA                      -5664.12    2312.69
+        15 Augusta, ME                       -4821.5    3061.67
+        16 Austin, TX                        -6753.6    2091.31
+        17 Bakersfield, CA                  -8223.61    2444.14
+        18 Baltimore, MD                    -5293.59    2714.79
+        19 Bangor, ME                       -4752.28    3095.56
+        20 Baton Rouge, LA                  -6298.38       2104
+        21 Battle Creek, MI                 -5885.55    2924.21
+        22 Bay City, MI                     -5796.36    3012.19
+        23 Beaumont, TX                     -6502.02     2078.8
+        24 Belleville, ON                   -5341.75    3053.49
+        25 Bellingham, WA                   -8463.32    3369.09
+        26 Berkeley, CA                     -8448.44    2616.77
+        27 Billings, MT                     -7496.88    3163.43
+        28 Biloxi, MS                       -6141.59    2100.22
+        29 Binghamtom, NY                   -5245.63    2908.83
+        30 Birmingham, AL                   -5997.68    2316.13
+        31 Bismarck, ND                     -6963.69    3234.25
+        32 Bloomington, IL                  -6149.07    2797.28
+        33 Boise, ID                        -8029.09    3013.51
+        34 Boston, MA                       -4909.96    2926.78
+        35 Bowling Green, KY                -5972.88    2555.87
+        36 Brandon, MB                      -6906.17    3448.55
+        37 Brantford, ON                    -5551.32    2980.19
+        38 Brattleboro, VT                  -5013.47    2960.81
+        39 Bridgeport, CT                   -5058.17    2844.46
+        40 Brockton, MA                      -4907.1    2907.78
+        41 Buffalo, NY                      -5450.17    2963.26
+        42 Burlington, ONT                  -5517.35    3001.69
+        43 Burlington, VT                   -5058.67    3073.09
+        44 Butte, MT                         -7775.6    3178.67
+        45 Calgary, AB                      -7878.31    3531.75
+        46 Cambridge, MA                    -4913.12    2927.93
+        47 Canton, OH                       -5622.91    2819.03
+        48 Carson City, NV                  -8275.34    2706.05
+        49 Cedar Rapids, IA                  -6332.2    2902.59
+        50 Central Islip, NY                -5057.96    2818.45
+        51 Champaign, IL                    -6097.23    2771.87
+        52 Charleston, SC                   -5522.89    2264.71
+        53 Charleston, WV                   -5640.47     2649.8
+        54 Charlotte, NC                    -5585.92    2434.03
+        55 Charlottetown, PE                 -4361.4    3198.44
+        56 Chattanooga, TN                  -5894.53     2421.5
+        57 Cheyenne, WY                     -7242.59     2842.6
+        58 Chicago, IL                      -6056.24    2891.65
+        59 Churchill, MB                    -6498.95    4058.49
+        60 Cincinnati, OH                   -5835.61    2705.92
+        61 Cleveland, OH                    -5644.81    2867.43
+        62 Colorado Springs, CO             -7242.67    2683.25
+        63 Columbia, MO                     -6379.87    2691.39
+        64 Columbia, SC                     -5599.17    2349.29
+        65 Columbus, GA                     -5872.29     2242.9
+        66 Columbus, OH                     -5734.86    2761.14
+        67 Concord, NH                      -4942.97    2985.49
+        68 Corpus Christi, TX               -6729.65    1920.88
+        69 Dallas, TX                       -6688.46    2265.19
+        70 Dawson, YT                       -9613.13     4425.1
+        71 Dayton, OH                       -5817.28    2747.17
+        72 Daytona Beach, FL                -5598.34    2018.32
+        73 Decatur, IL                      -6146.39    2752.79
+        74 Denver, CO                       -7253.95     2745.8
+        75 Des Moines, IA                   -6467.97    2874.42
+        76 Detroit, MI                      -5738.11    2924.92
+        77 Dodge City, KS                   -6910.72    2608.55
+        78 Dubuque, IA                      -6264.52     2936.6
+        79 Duluth, MN                       -6364.15    3232.53
+        80 Durham, NC                       -5451.57    2487.02
+        81 Eau Claire, WI                   -6322.14    3096.27
+        82 Edmonton, AB                     -7843.78    3701.63
+        83 Elizabeth, NJ                    -5127.67     2809.7
+        84 El Paso, TX                      -7357.75    2194.38
+        85 Enid, OK                         -6762.95    2514.78
+        86 Erie, PA                         -5533.55    2910.94
+        87 Eugene, OR                       -8504.68    3043.82
+        88 Eureka, CA                       -8579.09    2819.26
+        89 Evansville, IN                   -6049.73    2623.89
+        90 Fairbanks, AK                    -10206.6    4480.01
+        91 Fall River, MA                   -4916.54    2881.39
+        92 Fargo, ND                        -6687.73    3239.01
+        93 Flagstaff, AZ                    -7714.57    2432.03
+        94 Flint, MI                        -5782.44    2971.98
+        95 Ft Smith, AR                     -6522.52    2445.01
+        96 Ft Wayne, IN                     -5882.04    2841.94
+        97 Ft Worth, TX                     -6724.43    2261.17
+        98 Fredericton, NB                  -4597.05    3169.38
+        99 Fresno, CA                       -8275.68    2539.11
+       100 Gadsden, AL                      -5942.69    2350.23
+       101 Gainesville, FL                   -5688.3    2048.78
+       102 Gallup, NM                        -7513.6    2454.83
+       103 Galveston, TX                     -6550.1    2024.58
+       104 Gary, IN                         -6035.26    2873.92
+       105 Grand Junction, CO               -7500.33    2699.15
+       106 Grand Rapids, MI                 -5919.29    2968.58
+       107 Great Falls, MT                  -7690.35    3282.06
+       108 Green Bay, WI                    -6081.78    3076.08
+       109 Greensboro, NC                    -5513.3    2492.45
+       110 Greenville, SC                   -5693.08    2408.16
+       111 Guelph, ON                       -5546.08    3009.12
+       112 Gulfport, MS                     -6155.92    2098.24
+       113 Halifax, NS                      -4388.17    3101.07
+       114 Hamilton, OH                     -5842.83    2722.33
+       115 Hamilton, ON                     -5522.91    2982.99
+       116 Harrisburg, PA                    -5312.4    2782.73
+       117 Hartford, CT                     -5022.26    2885.68
+       118 Helena, MT                       -7741.15    3219.36
+       119 Hilo, HI                         -10769.1    1363.24
+       120 Honolulu, HI                     -10907.3    1472.22
+       121 Houston, TX                      -6589.17     2056.5
+       122 Huntsville, AL                   -5982.72    2399.71
+       123 Indianapolis, IN                 -5953.15    2747.82
+       124 Iowa City, IA                    -6324.33     2878.6
+       125 Jackson, MI                      -5831.77       2919
+       126 Jackson, MS                      -6231.37    2231.69
+       127 Jacksonville, FL                 -5642.06    2095.81
+       128 Jersey City, NJ                  -5118.47    2814.13
+       129 Johnstown, PA                    -5273.15    2783.06
+       130 Joplin, MO                       -6530.44    2562.36
+       131 Juneau, AK                       -9287.82    4028.41
+       132 Kalamazoo, MI                    -5913.71    2922.17
+       133 Kansas City, KS                  -6538.33    2702.62
+       134 Kansas City, MO                  -6534.95    2701.62
+       135 Kenosha, WI                      -6068.06    2942.42
+       136 Key West, FL                     -5650.84    1696.66
+       137 Kingston, ON                     -5292.52    3055.77
+       138 Kitchener, ON                    -5554.22    3002.82
+       139 Knoxville, TN                    -5798.57    2484.72
+       140 Lafayette, IN                    -6002.71    2792.62
+       141 Lancaster, PA                     -5272.4    2766.44
+       142 Lansing, MI                      -5842.42    2952.63
+       143 Laredo, TX                       -6875.52    1900.55
+       144 Las Vegas, NV                    -7955.43    2499.54
+       145 Lawrence, MA                      -4917.1    2950.86
+       146 Lethbridge, AB                   -7793.97    3429.24
+       147 Lexington, KY                    -5837.05    2624.85
+       148 Lihue, HI                        -11011.9     1518.8
+       149 Lima, OH                         -5811.31    2815.13
+       150 Lincoln, NE                      -6679.25     2819.1
+       151 Little Rock, AR                   -6376.8    2400.82
+       152 London, ON                       -5612.35    2968.25
+       153 Los Angeles, CA                  -8170.06    2352.86
+       154 Louisville, KY                   -5925.61     2643.2
+       155 Lowell, MA                       -4927.67    2945.78
+       156 Lubbock, TX                      -7037.72    2320.08
+       157 Macon, GA                        -5778.64    2269.14
+       158 Madison, WI                      -6177.23    2976.16
+       159 Manchester, NH                   -4937.25    2970.81
+       160 Marshall, TX                     -6520.37     2248.7
+       161 Medicine Hat, AB                 -7650.33    3456.09
+       162 Memphis, TN                      -6221.99    2428.67
+       163 Meriden, CT                      -5030.68     2870.1
+       164 Miami, FL                        -5541.05    1780.86
+       165 Milwaukee, WI                    -6073.95     2973.8
+       166 Minneapolis, MN                  -6444.11    3107.92
+       167 Minot, ND                         -6999.1    3332.66
+       168 Mobile, AL                       -6083.39    2120.83
+       169 Moncton, NB                      -4469.28    3186.15
+       170 Montgomery, AL                   -5962.96     2236.4
+       171 Montpelier, VT                   -5014.68    3058.17
+       172 Montreal, QC                     -5108.32    3156.64
+       173 Moose Jaw, SK                     -7293.6    3477.58
+       174 Muncie, IN                       -5899.83    2777.19
+       175 Nashville, TN                    -5996.43     2498.9
+       176 Natchez, MS                      -6315.55    2180.68
+       177 Newark, NJ                       -5125.02    2814.65
+       178 New Britain,CT                   -5028.78     2878.6
+       179 New Haven, CT                    -5039.05    2854.21
+       180 New Orleans, LA                  -6223.79    2069.72
+       181 New York, NY                     -5113.52    2813.17
+       182 Niagara Falls, ON                -5463.16    2979.17
+       183 Nome, AK                         -11428.9    4456.75
+       184 Norfolk, VA                         -5271    2545.94
+       185 North Bay, ON                     -5490.8    3208.34
+       186 Oakland, CA                      -8448.31    2612.12
+       187 Ogden, UT                        -7736.85    2848.33
+       188 Oklahoma City, OK                -6737.94    2450.65
+       189 Omaha, NE                        -6628.87    2850.79
+       190 Orlando, FL                      -5622.97    1971.86
+       191 Ottawa, ON                       -5252.81    3131.36
+       192 Paducah, KY                      -6121.88     2562.3
+       193 Pasadena, CA                     -8163.21    2359.46
+       194 Paterson, NJ                     -5124.98    2827.16
+       195 Pensacola, FL                    -6026.31    2101.97
+       196 Peoria, IL                        -6190.2    2811.75
+       197 Peterborough, ON                 -5414.57     3056.1
+       198 Philadelphia, PA                 -5193.52    2760.53
+       199 Phoenix, AZ                      -7743.78    2311.13
+       200 Pierre, SD                       -6933.79    3065.66
+       201 Pittsburgh, PA                   -5527.38    2794.27
+       202 Pittsfield, MA                   -5060.97    2933.11
+       203 Pocatello, ID                    -7769.44    2962.23
+       204 Port Arthur, TX                  -6490.06    2065.86
+       205 Portland, ME                     -4854.37    3016.81
+       206 Portland, OR                     -8476.31    3145.48
+       207 Portsmouth, NH                   -4889.42    2976.07
+       208 Portsmouth, VA                    -5271.9    2545.16
+       209 Prince Rupert, BC                -9013.16    3750.93
+       210 Providence, RI                   -4934.35    2889.85
+       211 Provo, UT                        -7715.07    2779.99
+       212 Pueblo, CO                          -7228    2643.22
+       213 Quebec City, QC                  -4932.84    3371.41
+       214 Racine, WI                       -6065.41    2952.19
+       215 Raleigh, NC                      -5433.61    2471.69
+       216 Rapid City, SD                   -7132.78    3045.78
+       217 Reading, PA                      -5246.24    2787.01
+       218 Regina, SK                       -7231.96    3484.63
+       219 Reno, NV                         -8278.54    2731.33
+       220 Richmond, VA                     -5352.19    2594.79
+       221 Roanoke, VA                      -5523.62    2575.25
+       222 Rochester, MN                    -6389.26    3041.71
+       223 Rochester, NY                    -5362.92     2981.8
+       224 Rockford, IL                        -6156    2920.75
+       225 Sacramento, CA                   -8394.66    2665.83
+       226 Saginaw, MI                      -5800.64     3000.1
+       227 Saint Catherines, ON             -5470.42    2984.36
+       228 Saint Cloud, MN                   -6506.2    3148.06
+       229 Saint John, NB                   -4552.73    3131.15
+       230 Saint John's, NF                 -3644.93    3290.24
+       231 Saint Joseph, MO                 -6553.47    2747.84
+       232 Saint Louis, MO                  -6232.28    2668.97
+       233 Saint Paul, MN                   -6432.33    3105.47
+       234 Saint Petersburg, FL             -5712.79    1918.83
+       235 Salem, OR                        -8501.11    3105.35
+       236 Salina, KS                        -6744.5    2683.69
+       237 Salt Lake City, UT               -7731.13     2816.4
+       238 San Antonio, TX                  -6805.46    2033.06
+       239 San Bernardino, CA               -8104.15    2356.74
+       240 San Diego, CA                       -8095    2260.48
+       241 San Francisco, CA                -8458.58    2610.09
+       242 San Jose, CA                     -8422.34    2579.99
+       243 San Juan, PR                     -4567.65    1276.08
+       244 Santa Barbara, CA                -8270.56    2378.33
+       245 Santa Cruz, CA                   -8431.72    2554.75
+       246 Santa Fe, NM                      -7319.8    2465.81
+       247 Sarasota, FL                     -5702.52    1888.81
+       248 Saskatoon, SK                    -7372.49    3604.78
+       249 Sault Ste Marie, ON              -5839.24    3211.91
+       250 Savannah, GA                     -5603.66    2216.82
+       251 Schenectady, NY                  -5108.93    2958.27
+       252 Seattle, WA                      -8452.53     3289.4
+       253 Sheboygan, WI                    -6060.69    3022.99
+       254 Sherbrooke, QC                   -4953.51    3139.57
+       255 Sheridan, WY                     -7390.17    3095.29
+       256 Shreveport, LA                   -6477.72    2247.34
+       257 Sioux City, IA                   -6660.82    2936.57
+       258 Sioux Falls, SD                  -6681.55    3009.12
+       259 South Bend, IN                    -5959.5    2880.14
+       260 Spartanburg, NC                  -5661.16    2414.86
+       261 Spokane, WA                      -8113.56    3293.02
+       262 Springfield, IL                  -6193.98    2750.12
+       263 Springfield, MA                  -5015.67    2909.02
+       264 Springfield, MO                  -6446.49    2571.41
+       265 Springfield, OH                  -5790.83    2758.59
+       266 Stamford, CT                     -5081.43    2836.61
+       267 Steubenville, OH                 -5571.47    2789.37
+       268 Stockton, CA                     -8380.59    2622.72
+       269 Sudbury, ON                      -5582.85    3221.59
+       270 Superior, WI                     -6363.98    3228.21
+       271 Syndey, NS                       -4149.04    3189.55
+       272 Syracuse, NY                     -5261.48    2974.43
+       273 Tacoma, WA                       -8460.28    3264.98
+       274 Tallahassee, FL                  -5823.44    2103.14
+       275 Tampa, FL                        -5697.53    1931.03
+       276 Terre Haute, IN                  -6039.92    2726.98
+       277 Texarkana, TX                    -6498.27    2309.52
+       278 Thunder Bay, ON                  -6171.89    3342.29
+       279 Timmins, ON                      -5622.77    3355.96
+       280 Toledo, OH                       -5773.31    2878.79
+       281 Topeka, KS                       -6610.92    2698.07
+       282 Toronto, ON                      -5485.93    3014.47
+       283 Trenton, NJ                      -5164.44    2778.82
+       284 Trois-Rivieres, QC               -5021.83    3202.78
+       285 Troy, NY                         -5091.81    2952.34
+       286 Tucson, AZ                       -7664.49    2226.38
+       287 Tulsa, OK                        -6632.67    2498.08
+       288 Urbana, IL                       -6094.74    2771.47
+       289 Utica, NY                        -5198.28    2978.08
+       290 Vancouver, BC                    -8511.34    3399.16
+       291 Victoria, BC                     -8528.19    3361.29
+       292 Waco, TX                         -6712.39    2179.91
+       293 Walla Walla, WA                  -8176.92    3182.87
+       294 Washington, DC                    -5322.9    2687.48
+       295 Waterloo, IA                     -6380.49    2936.07
+       296 West Palm Beach, FL              -5531.36    1845.89
+       297 Wheeling, WV                     -5577.48    2768.24
+       298 Whitehorse, YK                   -9332.64     4194.8
+       299 White Plains, NY                 -5096.73    2835.26
+       300 Wichita, KS                      -6725.58    2604.37
+       301 Wilkes-Barre, PA                 -5243.09    2849.91
+       302 Wilmington, DE                   -5219.97    2746.26
+       303 Wilmington, NC                   -5385.66    2364.84
+       304 Windsor, ON                      -5732.06       2921
+       305 Winnipeg, MB                     -6719.09    3448.62
+       306 Winston-Salem, NC                -5544.54    2494.33
+       307 Worcester, MA                    -4961.26    2920.16
+       308 Yakima, WA                       -8326.35    3220.01
+       309 Yellowknife, NT                  -7907.33    4315.91
+       310 Youngstown, OH                   -5572.55    2839.81
+       311 Yuma, AZ                         -7919.99    2261.17
+       312 Zanesville, OH                   -5666.77     2759.7
+
+312 rows selected.
+
+Distances count
+ ORDER BY 1, 3
+             *
+ERROR at line 7:
+ORA-01785: ORDER BY item must be the number of a SELECT-list expression
+
+
+
+PL/SQL procedure successfully completed.
+
+
+'END:'||TO_CHAR(SYSDATE,'
+-------------------------
+End: 12-NOV-2017 15:33:39
+

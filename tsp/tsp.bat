@@ -1,0 +1,1 @@
+sqlplus tsp/tsp@orclpdb
