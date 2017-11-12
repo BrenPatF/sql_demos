@@ -42,5 +42,5 @@ driving scripts
 
 Video
 =====
-The installation is demonstrated in a short video (8 minutes). As it is 170MB in size I moved it to a separate repo:
-Install-Videos\sql_demos_install_20171112_152657.mp4
+The installation is demonstrated in a short video (8 minutes). As it is 170MB in size I placed it in a shared On-Drive location:
+https://1drv.ms/v/s!AtGOr6YOZ-yVh_1a6_g7XwX0TTBTgA
