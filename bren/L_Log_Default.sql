@@ -1,4 +1,7 @@
 /***************************************************************************************************
+GitHub Project: sql_demos - Brendan's repo for interesting SQL
+                https://github.com/BrenPatF/sql_demos
+
 Description: Simple script to select the lines from Brendan's logging framework table for the default
              header, which has log_header_id = 0
 

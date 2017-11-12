@@ -1,6 +1,6 @@
 CREATE OR REPLACE PACKAGE BODY Timer_Set AS
 /***************************************************************************************************
-GitHub Project:  sql_demos - Brendan's repo for interesting problems and solutions in SQL
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
 Description: This package contains procedures to facilitate PL/SQL code timing. An initial version

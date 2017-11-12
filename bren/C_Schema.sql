@@ -1,6 +1,7 @@
 /***************************************************************************************************
+GitHub Project: sql_demos - Brendan's repo for interesting SQL
+                https://github.com/BrenPatF/sql_demos
 
-Author:      Brendan Furey
 Description: Script for SYS schema to create the new schema for Brendan's SQL demos
 
 Further details: 

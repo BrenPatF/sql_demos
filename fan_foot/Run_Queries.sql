@@ -1,5 +1,5 @@
 /***************************************************************************************************
-GitHub Project:  sql_demos - Brendan's repo for interesting problems and solutions in SQL
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
 Author:          Brendan Furey, 11 November 2017

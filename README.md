@@ -1,4 +1,4 @@
-# sql_demos - Brendan's repo for interesting problems and solutions in SQL
+# sql_demos - Brendan's repo for interesting SQL
 
 This project stores the SQL code for solutions to interesting problems I have looked at on my blog,
 or elsewhere. It includes installation scripts with object creation and data setup, and scripts to
@@ -18,7 +18,7 @@ Links to blog or other sources:
 
 Pre-requisites
 ==============
-In order to install this project you need to have SYS access to an Oracle database, along with a 
+In order to install this project you need to have SYS access to an Oracle database, minimum version 11.2, along with a 
 suitable database server directory to use for loading data via external tables.
 
 Install steps
