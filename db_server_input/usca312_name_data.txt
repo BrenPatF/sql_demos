@@ -1,0 +1,313 @@
+NAME
+Abilene, TX
+Akron, OH
+Albany, NY
+Albuquerque, NM
+Alert, NT
+Allentown, PA
+Amarillo, TX
+Anchorage, AK
+Ann Arbor, MI
+Asheville, NC
+Ashland, KY
+Atlanta, GA
+Atlantic City, NJ
+Augusta, GA
+Augusta, ME
+Austin, TX
+Bakersfield, CA
+Baltimore, MD
+Bangor, ME
+Baton Rouge, LA
+Battle Creek, MI
+Bay City, MI
+Beaumont, TX
+Belleville, ON
+Bellingham, WA
+Berkeley, CA
+Billings, MT
+Biloxi, MS
+Binghamtom, NY
+Birmingham, AL
+Bismarck, ND
+Bloomington, IL
+Boise, ID
+Boston, MA
+Bowling Green, KY
+Brandon, MB
+Brantford, ON
+Brattleboro, VT
+Bridgeport, CT
+Brockton, MA
+Buffalo, NY
+Burlington, ONT
+Burlington, VT
+Butte, MT
+Calgary, AB
+Cambridge, MA
+Canton, OH
+Carson City, NV
+Cedar Rapids, IA
+Central Islip, NY
+Champaign, IL
+Charleston, SC
+Charleston, WV
+Charlotte, NC
+Charlottetown, PE
+Chattanooga, TN
+Cheyenne, WY
+Chicago, IL
+Churchill, MB
+Cincinnati, OH
+Cleveland, OH
+Colorado Springs, CO
+Columbia, MO
+Columbia, SC
+Columbus, GA
+Columbus, OH
+Concord, NH
+Corpus Christi, TX
+Dallas, TX
+Dawson, YT
+Dayton, OH
+Daytona Beach, FL
+Decatur, IL
+Denver, CO
+Des Moines, IA
+Detroit, MI
+Dodge City, KS
+Dubuque, IA
+Duluth, MN
+Durham, NC
+Eau Claire, WI
+Edmonton, AB
+Elizabeth, NJ
+El Paso, TX
+Enid, OK
+Erie, PA
+Eugene, OR
+Eureka, CA
+Evansville, IN
+Fairbanks, AK
+Fall River, MA
+Fargo, ND
+Flagstaff, AZ
+Flint, MI
+Ft Smith, AR
+Ft Wayne, IN
+Ft Worth, TX
+Fredericton, NB
+Fresno, CA
+Gadsden, AL
+Gainesville, FL
+Gallup, NM
+Galveston, TX
+Gary, IN
+Grand Junction, CO
+Grand Rapids, MI
+Great Falls, MT
+Green Bay, WI
+Greensboro, NC
+Greenville, SC
+Guelph, ON
+Gulfport, MS
+Halifax, NS
+Hamilton, OH
+Hamilton, ON
+Harrisburg, PA
+Hartford, CT
+Helena, MT
+Hilo, HI
+Honolulu, HI
+Houston, TX
+Huntsville, AL
+Indianapolis, IN
+Iowa City, IA
+Jackson, MI
+Jackson, MS
+Jacksonville, FL
+Jersey City, NJ
+Johnstown, PA
+Joplin, MO
+Juneau, AK
+Kalamazoo, MI
+Kansas City, KS
+Kansas City, MO
+Kenosha, WI
+Key West, FL
+Kingston, ON
+Kitchener, ON
+Knoxville, TN
+Lafayette, IN
+Lancaster, PA
+Lansing, MI
+Laredo, TX
+Las Vegas, NV
+Lawrence, MA
+Lethbridge, AB
+Lexington, KY
+Lihue, HI
+Lima, OH
+Lincoln, NE
+Little Rock, AR
+London, ON
+Los Angeles, CA
+Louisville, KY
+Lowell, MA
+Lubbock, TX
+Macon, GA
+Madison, WI
+Manchester, NH
+Marshall, TX
+Medicine Hat, AB
+Memphis, TN
+Meriden, CT
+Miami, FL
+Milwaukee, WI
+Minneapolis, MN
+Minot, ND
+Mobile, AL
+Moncton, NB
+Montgomery, AL
+Montpelier, VT
+Montreal, QC
+Moose Jaw, SK
+Muncie, IN
+Nashville, TN
+Natchez, MS
+Newark, NJ
+New Britain,CT
+New Haven, CT
+New Orleans, LA
+New York, NY
+Niagara Falls, ON
+Nome, AK
+Norfolk, VA
+North Bay, ON
+Oakland, CA
+Ogden, UT
+Oklahoma City, OK
+Omaha, NE
+Orlando, FL
+Ottawa, ON
+Paducah, KY
+Pasadena, CA
+Paterson, NJ
+Pensacola, FL
+Peoria, IL
+Peterborough, ON
+Philadelphia, PA
+Phoenix, AZ
+Pierre, SD
+Pittsburgh, PA
+Pittsfield, MA
+Pocatello, ID
+Port Arthur, TX
+Portland, ME
+Portland, OR
+Portsmouth, NH
+Portsmouth, VA
+Prince Rupert, BC
+Providence, RI
+Provo, UT
+Pueblo, CO
+Quebec City, QC
+Racine, WI
+Raleigh, NC
+Rapid City, SD
+Reading, PA
+Regina, SK
+Reno, NV
+Richmond, VA
+Roanoke, VA
+Rochester, MN
+Rochester, NY
+Rockford, IL
+Sacramento, CA
+Saginaw, MI
+Saint Catherines, ON
+Saint Cloud, MN
+Saint John, NB
+Saint John's, NF
+Saint Joseph, MO
+Saint Louis, MO
+Saint Paul, MN
+Saint Petersburg, FL
+Salem, OR
+Salina, KS
+Salt Lake City, UT
+San Antonio, TX
+San Bernardino, CA
+San Diego, CA
+San Francisco, CA
+San Jose, CA
+San Juan, PR
+Santa Barbara, CA
+Santa Cruz, CA
+Santa Fe, NM
+Sarasota, FL
+Saskatoon, SK
+Sault Ste Marie, ON
+Savannah, GA
+Schenectady, NY
+Seattle, WA
+Sheboygan, WI
+Sherbrooke, QC
+Sheridan, WY
+Shreveport, LA
+Sioux City, IA
+Sioux Falls, SD
+South Bend, IN
+Spartanburg, NC
+Spokane, WA
+Springfield, IL
+Springfield, MA
+Springfield, MO
+Springfield, OH
+Stamford, CT
+Steubenville, OH
+Stockton, CA
+Sudbury, ON
+Superior, WI
+Syndey, NS
+Syracuse, NY
+Tacoma, WA
+Tallahassee, FL
+Tampa, FL
+Terre Haute, IN
+Texarkana, TX
+Thunder Bay, ON
+Timmins, ON
+Toledo, OH
+Topeka, KS
+Toronto, ON
+Trenton, NJ
+Trois-Rivieres, QC
+Troy, NY
+Tucson, AZ
+Tulsa, OK
+Urbana, IL
+Utica, NY
+Vancouver, BC
+Victoria, BC
+Waco, TX
+Walla Walla, WA
+Washington, DC
+Waterloo, IA
+West Palm Beach, FL
+Wheeling, WV
+Whitehorse, YK
+White Plains, NY
+Wichita, KS
+Wilkes-Barre, PA
+Wilmington, DE
+Wilmington, NC
+Windsor, ON
+Winnipeg, MB
+Winston-Salem, NC
+Worcester, MA
+Yakima, WA
+Yellowknife, NT
+Youngstown, OH
+Yuma, AZ
+Zanesville, OH
