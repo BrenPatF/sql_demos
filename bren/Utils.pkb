@@ -249,7 +249,8 @@ END Col_Headers;
 Get_SQL_Id: Given a marker string to match against in v$sql get the sql_id
 
 ***************************************************************************************************/
-FUNCTION Get_SQL_Id  (p_sql_marker VARCHAR2) RETURN VARCHAR2 IS
+FUNCTION Get_SQL_Id  (p_sql_marker VARCHAR2)   -- marker string
+                            RETURN VARCHAR2 IS -- sql id
   l_sql_id VARCHAR2(60);
 BEGIN
 
