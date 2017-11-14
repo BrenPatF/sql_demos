@@ -29,8 +29,8 @@ Install steps
 1. Update the logon script SYS.bat for your own credentials for the SYS schema
 2. Update the logon scripts bren.bat, fan_foot.bat, tsp.bat with your own connect string
 3. Update Install_SYS.sql with the name of an input directory on your database server that
-can be used for external tables to read from, and place the stats.txt file there (from 
-db_server_input)
+can be used for external tables to read from, and place the stats.txt, usca312_name_data.txt, 
+usca312_xy_data.txt files there (from db_server_input)
 4. Run Install_SYS.sql in SYS schema from SQL*Plus, or other SQL client, to set up the bren
 common schema, and the problem-specific schemas (currently just fan_foot)
 5. Run Install_bren.sql in bren schema to create the bren schema common objects
@@ -42,5 +42,6 @@ driving scripts
 
 Video
 =====
-The installation is demonstrated in a short video (8 minutes). As it is 170MB in size I placed it in a shared On-Drive location:
+The installation is demonstrated in a short video (8 minutes). As it is 170MB in size I placed it in a
+shared Microsoft One-Drive location:
 https://1drv.ms/v/s!AtGOr6YOZ-yVh_1a6_g7XwX0TTBTgA
