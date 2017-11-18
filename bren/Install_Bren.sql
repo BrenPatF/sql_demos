@@ -5,7 +5,7 @@ GitHub Project: sql_demos - Brendan's repo for interesting SQL
 
 Author:         Brendan Furey, 11 November 2017
 Description:    Installation script for library schema, bren, for the sql_demos GitHub project for
-                the common objects. 
+                the common objects
 
 ***************************************************************************************************/
 
@@ -77,7 +77,11 @@ CREATE OR REPLACE PUBLIC SYNONYM Utils FOR Utils
 /
 CREATE OR REPLACE PUBLIC SYNONYM Timer_Set FOR Timer_Set
 /
-GRANT EXECUTE ON Utils TO fan_foot
+CREATE OR REPLACE PUBLIC SYNONYM L1_num_arr FOR L1_num_arr
+/
+GRANT EXECUTE ON L1_num_arr TO bal_num_part
+/
+GRANT EXECUTE ON Utils TO fan_foot, tsp, bal_num_part
 /
 GRANT EXECUTE ON Timer_Set TO fan_foot
 /

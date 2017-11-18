@@ -14,13 +14,15 @@ Description: SYS installation script for the sql_demos GitHub project
              To be run from SYS schema before Install_bren.sql, then problem-specific schemas:
                 Install_Fan_Foot.sql - from fan_foot schema
                 Install_TSP.sql - from tsp schema
+                Install_Bal_Num_Part.sql - from bal_num_part schema
 
 Further details: 
 
 Modification History
 Who                  When        Which What
 -------------------- ----------- ----- -------------------------------------------------------------
-Brendan Furey        11-Nov-2017 1.0   Created
+Brendan Furey        11-Nov-2017 1.0   Created with bren and fan_foot
+Brendan Furey        18-Nov-2017 1.11  tsp, bal_num_part added
 
 ***************************************************************************************************/
 
@@ -29,6 +31,8 @@ CREATE OR REPLACE DIRECTORY input_dir AS 'C:\input'
 /
 @C_Schema bren
 @C_Schema fan_foot
+@C_Schema tsp
+@C_Schema bal_num_part
 
 PROMPT Grants to bren
 GRANT EXECUTE ON UTL_File TO bren
@@ -42,6 +46,8 @@ GRANT EXECUTE ON dbms_xplan_type_table TO bren
 GRANT SELECT ON v_$sql_plan TO bren -- for xplan outlines
 /
 PROMPT Role demo_user
+DROP ROLE demo_user
+/
 CREATE ROLE demo_user
 /
 GRANT ALL ON DIRECTORY input_dir TO demo_user
@@ -51,6 +57,6 @@ GRANT SELECT ON v_$database TO demo_user
 GRANT SELECT ON v_$version TO demo_user
 /
 PROMPT Grant role demo_user to demo schemas
-GRANT demo_user TO fan_foot
+GRANT demo_user TO fan_foot, tsp, bal_num_part
 /
 @..\bren\EndSpool

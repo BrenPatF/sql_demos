@@ -124,7 +124,7 @@ SELECT  /*+ gather_plan_statistics FF_PLF */
        p.avg_points
   FROM TABLE (Item_Cats.Best_N_Sets (
                   p_keep_size => :KEEP_NUM, 
-                  p_max_calls => 1000000,
+                  p_max_calls => 10000000,
                   p_n_size => 10, 
                   p_max_price => :MAX_PRICE,
                   p_cat_cur => CURSOR (

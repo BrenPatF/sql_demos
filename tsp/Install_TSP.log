@@ -1,20 +1,29 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          12-NOV-2017 15:33:37 Oracle Database 12c 12.1.0.2.0
+Start: ORCL          18-NOV-2017 08:42:14 Oracle Database 12c 12.2.0.1.0
 
 Create Emland tables...
+DROP SEQUENCE towns_eml_s
+              *
+ERROR at line 1:
+ORA-02289: sequence does not exist
 
-Sequence dropped.
 
 
 Sequence created.
 
+DROP TABLE distances_eml
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
+DROP TABLE towns_eml
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -67,32 +76,47 @@ Distances
 20 rows selected.
 
 Create usca312 tables...
+DROP SEQUENCE towns_usc_s
+              *
+ERROR at line 1:
+ORA-02289: sequence does not exist
 
-Sequence dropped.
 
 
 Sequence created.
 
-
-Table dropped.
-
-
-Table dropped.
-
-
-Table created.
+DROP TABLE distances_usc
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
 
-Table created.
+DROP TABLE towns_usc
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-
-Table dropped.
 
 
 Table created.
 
 
-Table dropped.
+Table created.
+
+DROP TABLE towns_ext
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+DROP TABLE xy_ext
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
 
 
 Table created.
@@ -112,8 +136,11 @@ Sequence dropped.
 
 Sequence created.
 
+DROP TABLE xy
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -447,17 +474,16 @@ Towns
 312 rows selected.
 
 Distances count
- ORDER BY 1, 3
-             *
-ERROR at line 7:
-ORA-01785: ORDER BY item must be the number of a SELECT-list expression
 
+  COUNT(*)
+----------
+     97032
 
 
 PL/SQL procedure successfully completed.
 
 
-'END:'||TO_CHAR(SYSDATE,'
--------------------------
-End: 12-NOV-2017 15:33:39
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 18-NOV-2017 08:42:16
 

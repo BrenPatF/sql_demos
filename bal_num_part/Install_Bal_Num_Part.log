@@ -1,0 +1,50 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          18-NOV-2017 08:41:36 Oracle Database 12c 12.2.0.1.0
+
+Create items table...
+DROP SEQUENCE items_s
+              *
+ERROR at line 1:
+ORA-02289: sequence does not exist
+
+
+
+Sequence created.
+
+DROP TABLE items
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Create temp table items_desc_temp ON COMMIT DELETE ROWS and index
+DROP TABLE items_desc_temp
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+
+Index created.
+
+
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 18-NOV-2017 08:41:36
+
