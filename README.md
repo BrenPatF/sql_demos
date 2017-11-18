@@ -17,11 +17,7 @@ Links to blog or other sources:
    http://aprogrammerwrites.eu/?p=878
 2. tsp: 'SQL for the Travelling Salesman Problem'
    http://aprogrammerwrites.eu/?p=896
-<<<<<<< HEAD
 3. bal_num_part: 'SQL for the Balanced Number Partitioning Problem'
-=======
-3. 'SQL for the Balanced Number Partitioning Problem'
->>>>>>> origin/master
    http://aprogrammerwrites.eu/?p=803
 
 Pre-requisites
