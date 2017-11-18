@@ -44,5 +44,5 @@ BEGIN
   :MAX_PRICE := 900;
 END;
 /
-START Run_Queries
+START Run_Queries_FFT
 @..\bren\EndSpool

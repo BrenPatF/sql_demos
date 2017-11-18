@@ -8,8 +8,8 @@ The idea is that anyone with the pre-requisites should be able to reproduce my r
 minutes of downloading the repo.
 
 The installation scripts will create a common objects schema, bren, and a separate schema for each
-problem, of which there are two at present, fan_foot and tsp. The SYS and bren objects are in the folder
-bren, with the problem-specific scripts in a separate folder for each one.
+problem, of which there are three at present, bal_num_part, fan_foot and tsp. The SYS and bren 
+objects are in the folder bren, with the problem-specific scripts in a separate folder for each one.
 
 Links to blog or other sources:
 
@@ -17,23 +17,27 @@ Links to blog or other sources:
    http://aprogrammerwrites.eu/?p=878
 2. tsp: 'SQL for the Travelling Salesman Problem'
    http://aprogrammerwrites.eu/?p=896
+3. bal_num_part: 'SQL for the Balanced Number Partitioning Problem'
+   http://aprogrammerwrites.eu/?p=803
 
 Pre-requisites
 ==============
-In order to install this project you need to have SYS access to an Oracle database, minimum version 11.2,
-along with a suitable database server directory to use for loading data via external tables.
+In order to install this project you need to have SYS access to an Oracle database, minimum version
+11.2, along with a suitable database server directory to use for loading data via external tables.
 
 Install steps
 =============
 	
 1. Update the logon script SYS.bat for your own credentials for the SYS schema
-2. Update the logon scripts bren.bat, fan_foot.bat, tsp.bat with your own connect string
+2. Update the logon scripts bren.bat, bal_num_part.bat, fan_foot.bat, tsp.bat with your own connect
+string
 3. Update Install_SYS.sql with the name of an input directory on your database server that
 can be used for external tables to read from, and place the stats.txt, usca312_name_data.txt, 
 usca312_xy_data.txt files there (from db_server_input)
 4. Run Install_SYS.sql in SYS schema from SQL*Plus, or other SQL client, to set up the bren
-common schema, and the problem-specific schemas (currently just fan_foot)
+common schema, and the problem-specific schemas
 5. Run Install_bren.sql in bren schema to create the bren schema common objects
+6. Run Install_Bal_Num_Part.sql in bal_num_part schema to create the bal_num_part schema objects
 6. Run Install_fan_foot.sql in fan_foot schema to create the fan_foot schema objects
 7. Run Install_tsp.sql in tsp schema to create the tsp schema objects
 8. Run Main_*.sql as desired in the specific schemas to run the SQL for the different datasets and get

@@ -1,7 +1,7 @@
 
-'START:'||TO_CHAR(SYSDATE,'DD-MON-YY
-------------------------------------
-Start: 11-NOV-2017 09:17:48
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          18-NOV-2017 08:42:00 Oracle Database 12c 12.2.0.1.0
 
 Create Brazil tables...
 DROP TABLE brazil_positions
@@ -87,7 +87,15 @@ Index created.
 PL/SQL procedure successfully completed.
 
 
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 11-NOV-2017 09:17:49
+End: 18-NOV-2017 08:42:01
 

@@ -1,7 +1,7 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          12-NOV-2017 14:49:44 Oracle Database 12c 12.2.0.1.0
+Start: ORCL          18-NOV-2017 08:42:43 Oracle Database 12c 12.2.0.1.0
 
 Point view at EML tables and set EML bind variables
 
@@ -152,7 +152,7 @@ ROOT_LEG       PATH_RNK   TOT_DIST    TOWN_ID NAME                             L
 
 100 rows selected.
 
-Elapsed: 00:00:00.04
+Elapsed: 00:00:00.03
 
 PL/SQL procedure successfully completed.
 
@@ -177,17 +177,17 @@ r.path NOT LIKE '%' || '|' || LPad (d.b, 3, '0') || '%'  WHERE
 r.path_rnk <= :KEEP_NUM ), top_n_paths AS ( SELECT root_leg,
 tot_price,        path,        path_rnk,        t
 
-Plan hash value: 3997141290
+Plan hash value: 19131775
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Id  | Operation                                         | Name            | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 |   0 | SELECT STATEMENT                                  |                 |      1 |        |    100 |00:00:00.01 |      21 |       |       |          |
 |   1 |  WINDOW SORT                                      |                 |      1 |      5 |    100 |00:00:00.01 |      21 | 20480 | 20480 |18432  (0)|
-|*  2 |   HASH JOIN OUTER                                 |                 |      1 |      5 |    100 |00:00:00.01 |      21 |   945K|   945K| 1189K (0)|
+|*  2 |   HASH JOIN OUTER                                 |                 |      1 |      5 |    100 |00:00:00.01 |      21 |   945K|   945K| 1190K (0)|
 |   3 |    MERGE JOIN                                     |                 |      1 |      5 |    100 |00:00:00.01 |      14 |       |       |          |
 |   4 |     TABLE ACCESS BY INDEX ROWID                   | TOWNS_EML       |      1 |      5 |      5 |00:00:00.01 |       2 |       |       |          |
-|   5 |      INDEX FULL SCAN                              | SYS_C0018662    |      1 |      5 |      5 |00:00:00.01 |       1 |       |       |          |
+|   5 |      INDEX FULL SCAN                              | SYS_C0019033    |      1 |      5 |      5 |00:00:00.01 |       1 |       |       |          |
 |*  6 |     SORT JOIN                                     |                 |      5 |      5 |    100 |00:00:00.01 |      12 | 13312 | 13312 |12288  (0)|
 |   7 |      VIEW                                         |                 |      1 |      5 |    100 |00:00:00.01 |      12 |       |       |          |
 |   8 |       WINDOW SORT                                 |                 |      1 |      5 |    100 |00:00:00.01 |      12 | 15360 | 15360 |14336  (0)|
@@ -196,7 +196,7 @@ Plan hash value: 3997141290
 |  11 |          CONNECT BY WITHOUT FILTERING             |                 |      1 |        |      5 |00:00:00.01 |       1 |  2048 |  2048 | 2048  (0)|
 |  12 |           VIEW                                    |                 |      1 |      1 |      1 |00:00:00.01 |       1 |       |       |          |
 |  13 |            SORT AGGREGATE                         |                 |      1 |      1 |      1 |00:00:00.01 |       1 |       |       |          |
-|  14 |             INDEX FULL SCAN                       | SYS_C0018662    |      1 |      5 |      5 |00:00:00.01 |       1 |       |       |          |
+|  14 |             INDEX FULL SCAN                       | SYS_C0019033    |      1 |      5 |      5 |00:00:00.01 |       1 |       |       |          |
 |  15 |         BUFFER SORT                               |                 |      5 |      5 |    100 |00:00:00.01 |      11 |  4096 |  4096 | 4096  (0)|
 |* 16 |          VIEW                                     |                 |      1 |      5 |     20 |00:00:00.01 |      11 |       |       |          |
 |  17 |           UNION ALL (RECURSIVE WITH) BREADTH FIRST|                 |      1 |        |     60 |00:00:00.01 |      11 |  4096 |  4096 | 4096  (0)|
@@ -231,5 +231,5 @@ Predicate Information (identified by operation id):
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 12-NOV-2017 14:49:44
+End: 18-NOV-2017 08:42:43
 

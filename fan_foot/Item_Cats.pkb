@@ -8,6 +8,8 @@ Description:    Brendan's pipelined function solution for the knapsack problem w
                 and items having categories with validity bands, as described at
                 http://aprogrammerwrites.eu/?p=878 (SQL for the Fantasy Football Knapsack Problem)
 
+                There may be an issue related to package state not being fully reset when called 
+                multiple times in a session
 ***************************************************************************************************/
 
 c_cat_all           CONSTANT VARCHAR2(3) := 'AL';

@@ -1,3 +1,9 @@
+  FROM v$database dbs,  v$version ver
+       *
+ERROR at line 3:
+ORA-00942: table or view does not exist
+
+
 Common tables creation
 ======================
 Create table log_headers
@@ -89,8 +95,19 @@ Synonym created.
 Synonym created.
 
 
+Synonym created.
+
+
 Grant succeeded.
 
 
 Grant succeeded.
+
+
+Grant succeeded.
+
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 18-NOV-2017 08:41:07
 

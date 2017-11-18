@@ -1,6 +1,6 @@
 @..\bren\InitSpool Main_USC
 /***************************************************************************************************
-GitHub Project:  sql_demos - Brendan's repo for interesting problems and solutions in SQL
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
 Author:          Brendan Furey, 12 November 2017
@@ -26,5 +26,5 @@ SELECT id,
        dst
   FROM distances_usc
 /
-START Run_Queries 1 2 2 1
+START Run_Queries_TSP 1 2 2 1
 @..\bren\EndSpool

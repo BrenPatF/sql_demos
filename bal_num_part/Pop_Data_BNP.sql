@@ -1,0 +1,7 @@
+VAR N_ITEMS NUMBER
+EXECUTE :N_ITEMS := &1
+INSERT INTO items
+SELECT items_s.NEXTVAL, 'Item-' || n, DBMS_Random.Value (0, :N_ITEMS) FROM  
+(SELECT LEVEL n FROM DUAL CONNECT BY LEVEL < :N_ITEMS)
+/
+EXECUTE DBMS_Stats.Gather_Schema_Stats(ownname => 'BAL_NUM_PART');
