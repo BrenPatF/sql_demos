@@ -12,9 +12,10 @@ Description: SYS installation script for the sql_demos GitHub project
                 and new role demo_user
 
              To be run from SYS schema before Install_bren.sql, then problem-specific schemas:
-                Install_Fan_Foot.sql - from fan_foot schema
-                Install_TSP.sql - from tsp schema
-                Install_Bal_Num_Part.sql - from bal_num_part schema
+                Install_Fan_Foot.sql      - from fan_foot schema
+                Install_TSP.sql           - from tsp schema
+                Install_Bal_Num_Part.sql  - from bal_num_part schema
+                Install_Shortest_Path.sql - from bal_num_part schema
 
 Further details: 
 
@@ -22,7 +23,8 @@ Modification History
 Who                  When        Which What
 -------------------- ----------- ----- -------------------------------------------------------------
 Brendan Furey        11-Nov-2017 1.0   Created with bren and fan_foot
-Brendan Furey        18-Nov-2017 1.11  tsp, bal_num_part added
+Brendan Furey        18-Nov-2017 1.1   tsp, bal_num_part added
+Brendan Furey        19-Nov-2017 1.2   shortest_path added
 
 ***************************************************************************************************/
 
@@ -33,6 +35,7 @@ CREATE OR REPLACE DIRECTORY input_dir AS 'C:\input'
 @C_Schema fan_foot
 @C_Schema tsp
 @C_Schema bal_num_part
+@C_Schema shortest_path
 
 PROMPT Grants to bren
 GRANT EXECUTE ON UTL_File TO bren
@@ -57,6 +60,6 @@ GRANT SELECT ON v_$database TO demo_user
 GRANT SELECT ON v_$version TO demo_user
 /
 PROMPT Grant role demo_user to demo schemas
-GRANT demo_user TO fan_foot, tsp, bal_num_part
+GRANT demo_user TO fan_foot, tsp, bal_num_part, shortest_path
 /
 @..\bren\EndSpool

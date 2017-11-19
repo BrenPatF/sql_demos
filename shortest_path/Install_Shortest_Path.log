@@ -1,0 +1,225 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          19-NOV-2017 14:43:53 Oracle Database 12c 12.2.0.1.0
+
+Create aj tables...
+Table arcs_aj_dir
+
+Table dropped.
+
+
+Table created.
+
+Table arcs_aj_undir
+
+Table dropped.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+arcs_aj_dir
+
+SRC        DST          DISTANCE
+---------- ---------- ----------
+A          B                   2
+A          C                   4
+A          D                   3
+B          E                   7
+B          F                   4
+B          G                   6
+C          E                   3
+C          F                   2
+C          G                   4
+D          E                   4
+D          F                   1
+D          G                   5
+E          H                   1
+E          I                   4
+F          H                   6
+F          I                   3
+G          H                   3
+G          I                   3
+H          J                   3
+I          J                   4
+
+20 rows selected.
+
+Nodes
+
+NODE
+----------
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+
+10 rows selected.
+
+Add arcs in both directions to arcs_undir
+
+40 rows created.
+
+arcs_aj_undir
+
+SRC        DST          DISTANCE
+---------- ---------- ----------
+A          B                   2
+A          C                   4
+A          D                   3
+B          A                   2
+B          E                   7
+B          F                   4
+B          G                   6
+C          A                   4
+C          E                   3
+C          F                   2
+C          G                   4
+D          A                   3
+D          E                   4
+D          F                   1
+D          G                   5
+E          B                   7
+E          C                   3
+E          D                   4
+E          H                   1
+E          I                   4
+F          B                   4
+F          C                   2
+F          D                   1
+F          H                   6
+F          I                   3
+G          B                   6
+G          C                   4
+G          D                   5
+G          H                   3
+G          I                   3
+H          E                   1
+H          F                   6
+H          G                   3
+H          J                   3
+I          E                   4
+I          F                   3
+I          G                   3
+I          J                   4
+J          H                   3
+J          I                   4
+
+40 rows selected.
+
+Create brightkite tables...
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+428156 rows created.
+
+Create ca_grqc tables...
+
+Table dropped.
+
+
+Table created.
+
+
+Table dropped.
+
+
+Table created.
+
+
+28980 rows created.
+
+Create GTT approx_min_levs
+
+Table dropped.
+
+
+Table created.
+
+
+Index created.
+
+
+PL/SQL procedure successfully completed.
+
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 19-NOV-2017 14:43:58
+

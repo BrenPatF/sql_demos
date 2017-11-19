@@ -19,6 +19,10 @@ Links to blog or other sources:
    http://aprogrammerwrites.eu/?p=896
 3. bal_num_part: 'SQL for the Balanced Number Partitioning Problem'
    http://aprogrammerwrites.eu/?p=803
+4. shortest_path: 'SQL for Shortest Path Problems'
+   http://aprogrammerwrites.eu/?p=1391
+   'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+   http://aprogrammerwrites.eu/?p=1415
 
 Pre-requisites
 ==============
@@ -32,17 +36,17 @@ Install steps
 2. Update the logon scripts bren.bat, bal_num_part.bat, fan_foot.bat, tsp.bat with your own connect
 string
 3. Update Install_SYS.sql with the name of an input directory on your database server that
-can be used for external tables to read from, and place the stats.txt, usca312_name_data.txt, 
-usca312_xy_data.txt files there (from db_server_input)
+can be used for external tables to read from, and place all the files in db_server_input there
 4. Run Install_SYS.sql in SYS schema from SQL*Plus, or other SQL client, to set up the bren
 common schema, and the problem-specific schemas
 5. Run Install_bren.sql in bren schema to create the bren schema common objects
 6. Run Install_Bal_Num_Part.sql in bal_num_part schema to create the bal_num_part schema objects
-6. Run Install_fan_foot.sql in fan_foot schema to create the fan_foot schema objects
-7. Run Install_tsp.sql in tsp schema to create the tsp schema objects
-8. Run Main_*.sql as desired in the specific schemas to run the SQL for the different datasets and get
-execution plans and results logs. For example, for fan_foot: Main_Bra.sql and Main_Eng.sql are the 
-driving scripts
+7. Run Install_fan_foot.sql in fan_foot schema to create the fan_foot schema objects
+8. Run Install_Shortest_Path.sql in shortest_path schema to create the shortest_path schema objects
+9. Run Install_tsp.sql in tsp schema to create the tsp schema objects
+10. Run Main_*.sql as desired in the specific schemas to run the SQL for the different datasets and
+get execution plans and results logs. For example, for fan_foot: Main_Bra.sql and Main_Eng.sql are
+the driving scripts
 
 Video
 =====

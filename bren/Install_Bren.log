@@ -1,8 +1,7 @@
-  FROM v$database dbs,  v$version ver
-       *
-ERROR at line 3:
-ORA-00942: table or view does not exist
 
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          19-NOV-2017 14:41:33 Oracle Database 12c 12.2.0.1.0
 
 Common tables creation
 ======================
@@ -109,5 +108,5 @@ Grant succeeded.
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 18-NOV-2017 08:41:07
+End: 19-NOV-2017 14:41:34
 

@@ -1,7 +1,7 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          18-NOV-2017 08:40:47 Oracle Database 12c 12.2.0.1.0
+Start: ORCL          19-NOV-2017 14:41:28 Oracle Database 12c 12.2.0.1.0
 
 DIRECTORY input_dir - C:\input *** Change this if necessary, read access required ***
 
@@ -227,6 +227,61 @@ new   1: GRANT CREATE PROCEDURE TO bal_num_part
 
 Grant succeeded.
 
+old   1: CREATE USER &DEMO_USER IDENTIFIED BY &DEMO_USER
+new   1: CREATE USER shortest_path IDENTIFIED BY shortest_path
+
+User created.
+
+old   1: GRANT CREATE SESSION TO &DEMO_USER
+new   1: GRANT CREATE SESSION TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT ALTER SESSION TO &DEMO_USER
+new   1: GRANT ALTER SESSION TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE TABLE TO &DEMO_USER
+new   1: GRANT CREATE TABLE TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE TYPE TO &DEMO_USER
+new   1: GRANT CREATE TYPE TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE PUBLIC SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE PUBLIC SYNONYM TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE SYNONYM TO &DEMO_USER
+new   1: GRANT CREATE SYNONYM TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE SEQUENCE TO &DEMO_USER
+new   1: GRANT CREATE SEQUENCE TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE VIEW TO &DEMO_USER
+new   1: GRANT CREATE VIEW TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT UNLIMITED TABLESPACE TO &DEMO_USER
+new   1: GRANT UNLIMITED TABLESPACE TO shortest_path
+
+Grant succeeded.
+
+old   1: GRANT CREATE PROCEDURE TO &DEMO_USER
+new   1: GRANT CREATE PROCEDURE TO shortest_path
+
+Grant succeeded.
+
 Grants to bren
 
 Grant succeeded.
@@ -266,5 +321,5 @@ Grant succeeded.
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 18-NOV-2017 08:40:48
+End: 19-NOV-2017 14:41:29
 

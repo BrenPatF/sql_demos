@@ -81,7 +81,7 @@ CREATE OR REPLACE PUBLIC SYNONYM L1_num_arr FOR L1_num_arr
 /
 GRANT EXECUTE ON L1_num_arr TO bal_num_part
 /
-GRANT EXECUTE ON Utils TO fan_foot, tsp, bal_num_part
+GRANT EXECUTE ON Utils TO fan_foot, tsp, bal_num_part, shortest_path
 /
 GRANT EXECUTE ON Timer_Set TO fan_foot
 /
