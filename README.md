@@ -8,21 +8,21 @@ The idea is that anyone with the pre-requisites should be able to reproduce my r
 minutes of downloading the repo.
 
 The installation scripts will create a common objects schema, bren, and a separate schema for each
-problem, of which there are three at present, bal_num_part, fan_foot and tsp. The SYS and bren 
-objects are in the folder bren, with the problem-specific scripts in a separate folder for each one.
+problem, of which there are four at present. The SYS and bren objects are in the folder bren, with
+the problem-specific scripts in a separate folder for each one.
 
 Links to blog or other sources:
 
-1. fan_foot: 'SQL for the Fantasy Football Knapsack Problem'
-   http://aprogrammerwrites.eu/?p=878
-2. tsp: 'SQL for the Travelling Salesman Problem'
-   http://aprogrammerwrites.eu/?p=896
+1. fan_foot:      'SQL for the Fantasy Football Knapsack Problem'
+                  http://aprogrammerwrites.eu/?p=878
+2. tsp:           'SQL for the Travelling Salesman Problem'
+                  http://aprogrammerwrites.eu/?p=896
 3. bal_num_part: 'SQL for the Balanced Number Partitioning Problem'
-   http://aprogrammerwrites.eu/?p=803
+                  http://aprogrammerwrites.eu/?p=803
 4. shortest_path: 'SQL for Shortest Path Problems'
-   http://aprogrammerwrites.eu/?p=1391
-   'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
-   http://aprogrammerwrites.eu/?p=1415
+                  http://aprogrammerwrites.eu/?p=1391
+                  'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+                  http://aprogrammerwrites.eu/?p=1415
 
 Pre-requisites
 ==============
@@ -33,8 +33,8 @@ Install steps
 =============
 	
 1. Update the logon script SYS.bat for your own credentials for the SYS schema
-2. Update the logon scripts bren.bat, bal_num_part.bat, fan_foot.bat, tsp.bat with your own connect
-string
+2. Update the logon scripts bren.bat, bal_num_part.bat, fan_foot.bat, shortest_path.bat, tsp.bat
+with your own connect string
 3. Update Install_SYS.sql with the name of an input directory on your database server that
 can be used for external tables to read from, and place all the files in db_server_input there
 4. Run Install_SYS.sql in SYS schema from SQL*Plus, or other SQL client, to set up the bren
