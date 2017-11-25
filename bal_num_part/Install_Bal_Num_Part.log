@@ -1,7 +1,7 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          18-NOV-2017 08:41:36 Oracle Database 12c 12.2.0.1.0
+Start: ORCL          25-NOV-2017 15:59:07 Oracle Database 12c 12.2.0.1.0
 
 Create items table...
 DROP SEQUENCE items_s
@@ -46,5 +46,5 @@ No errors.
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 18-NOV-2017 08:41:36
+End: 25-NOV-2017 15:59:07
 

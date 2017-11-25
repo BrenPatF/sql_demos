@@ -1,7 +1,7 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          18-NOV-2017 08:42:14 Oracle Database 12c 12.2.0.1.0
+Start: ORCL          25-NOV-2017 16:00:50 Oracle Database 12c 12.2.0.1.0
 
 Create Emland tables...
 DROP SEQUENCE towns_eml_s
@@ -485,5 +485,5 @@ PL/SQL procedure successfully completed.
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 18-NOV-2017 08:42:16
+End: 25-NOV-2017 16:00:52
 

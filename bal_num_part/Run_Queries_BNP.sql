@@ -2,14 +2,14 @@
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:          Brendan Furey, 17 November 2017
-Description:     Called by the driving scripts to run the SQL; log the execution plans; print 
-                 the logging results
+Author:          Brendan Furey, 25 May 2013
+Description:     Called by the driving scripts to run the SQL (detail version); log the execution 
+                 plans; print the logging results
 
-Further details: 'SQL for the Balanced Number Partitioning Problem'
+Further details: 'SQL for the Balanced Number Partitioning Problem', May 2013
                  http://aprogrammerwrites.eu/?p=803
-
 ***************************************************************************************************/
+
 BEGIN
   Utils.Clear_Log;
   Utils.g_debug_level := 0;

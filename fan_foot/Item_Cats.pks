@@ -1,14 +1,16 @@
 CREATE OR REPLACE PACKAGE Item_Cats AS
 /**************************************************************************************************
-GitHub Project: sql_demos - Brendan's repo for interesting SQL
-                https://github.com/BrenPatF/sql_demos
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
+                 https://github.com/BrenPatF/sql_demos
 
-Author:         Brendan Furey, 7 July 2013
-Description:    Brendan's pipelined function solution for the knapsack problem with one container,
-                and items having categories with validity bands, as described at
-                http://aprogrammerwrites.eu/?p=878 (SQL for the Fantasy Football Knapsack Problem)
+Author:          Brendan Furey, 22 June 2013
+Description:     Brendan's pipelined function solution for the knapsack problem with one container,
+                 and items having categories with validity bands
 
+Further details: 'SQL for the Fantasy Football Knapsack Problem', June 2013
+                 http://aprogrammerwrites.eu/?p=878
 ***************************************************************************************************/
+
 TYPE sol_detail_rec_type IS RECORD (
         set_id                  NUMBER,
         item_id                 VARCHAR2(100),

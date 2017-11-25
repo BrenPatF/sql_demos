@@ -2,7 +2,7 @@
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:         Brendan Furey, 19 November 2017
+Author:         Brendan Furey, 4 May 2015
 Description:    Called by the driving scripts to run the SQL queries for the shortest_path schema.
                 This script implements ideas in the first post below, for the datasets mentioned
                 there.
@@ -12,8 +12,8 @@ Further details: 'SQL for Shortest Path Problems'
 
                  'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
                  http://aprogrammerwrites.eu/?p=1415
-
 ***************************************************************************************************/
+
 BEGIN
   Utils.Clear_Log;
   Utils.g_debug_level := 0;

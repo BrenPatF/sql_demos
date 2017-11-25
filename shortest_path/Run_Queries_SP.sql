@@ -2,18 +2,18 @@
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:         Brendan Furey, 19 November 2017
-Description:    Called by the driving scripts to run the SQL queries for the shortest_path schema.
-                This script implements ideas in the second post below, for the datasets mentioned
-                there. It takes two parameters, for the starting node and the maximum level
+Author:          Brendan Furey, 4 May 2015
+Description:     Called by the driving scripts to run the SQL queries for the shortest_path schema.
+                 This script implements ideas in the second post below, for the datasets mentioned
+                 there. It takes two parameters, for the starting node and the maximum level
 
-Further details: 'SQL for Shortest Path Problems'
+Further details: 'SQL for Shortest Path Problems', April 2015
                  http://aprogrammerwrites.eu/?p=1391
 
-                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach', May 2015
                  http://aprogrammerwrites.eu/?p=1415
-
 ***************************************************************************************************/
+
 DEFINE SRC=&1
 DEFINE LEVMAX=&2
 BEGIN
@@ -47,7 +47,7 @@ SELECT  a.dst,
    AND p.lev < &LEVMAX
 )  SEARCH DEPTH FIRST BY node SET line_no
 CYCLE node SET lp TO '*' DEFAULT ' '
-SELECT /*+ GATHER_PLAN_STATISTICS SP_RSFONE */
+SELECT /*+ gather_plan_statistics SP_RSFONE */
        Substr (LPad ('.', 1 + 2 * (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) - 1), '.') || node, 2) node,
        Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) lev,
        Max (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev)) OVER () maxlev,
@@ -99,7 +99,7 @@ SELECT a.dst,
  WHERE p.rn = 1
    AND p.lev < Nvl (b.lev, 1000000)
 )  SEARCH DEPTH FIRST BY node SET line_no CYCLE node SET lp TO '*' DEFAULT ' '
-SELECT /*+ GATHER_PLAN_STATISTICS */
+SELECT /*+ gather_plan_statistics */
        Substr (LPad ('.', 1 + 2 * (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) - 1), '.') || node, 2) node,
        Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) lev,
        Max (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev)) OVER () maxlev,
@@ -130,7 +130,7 @@ SELECT  a.dst,
  WHERE p.rn = 1
    AND p.lev < &LEVMAX
 ) CYCLE node SET lp TO '*' DEFAULT ' '
-SELECT  /*+ GATHER_PLAN_STATISTICS */
+SELECT  /*+ gather_plan_statistics */
        node,
        Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) lev
   FROM paths_0
@@ -156,7 +156,7 @@ SELECT a.dst,
  WHERE p.rn = 1
    AND p.lev < Nvl (b.lev, 1000000)
 )  SEARCH DEPTH FIRST BY node SET line_no CYCLE node SET lp TO '*' DEFAULT ' '
-SELECT /*+ GATHER_PLAN_STATISTICS */
+SELECT /*+ gather_plan_statistics */
        Substr (LPad ('.', 1 + 2 * (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) - 1), '.') || node, 2) node,
        Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev) lev,
        Max (Max (lev) KEEP (DENSE_RANK FIRST ORDER BY lev)) OVER () maxlev,

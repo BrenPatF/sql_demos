@@ -7,10 +7,10 @@ Author:          Brendan Furey, 19 November 2017
 Description:     Driving script for the Brightkite dataset: Creates the view; calls 
                  Run_Queries_SP.sql (script implementing ideas in second post below)
 
-Further details: 'SQL for Shortest Path Problems'
+Further details: 'SQL for Shortest Path Problems', April 2015
                  http://aprogrammerwrites.eu/?p=1391
 
-                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach', May 2015
                  http://aprogrammerwrites.eu/?p=1415
 
 ***************************************************************************************************/

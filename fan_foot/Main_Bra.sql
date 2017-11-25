@@ -3,14 +3,14 @@
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:          Brendan Furey, 11 November 2017
-Description:     Driving script for the Brazil dataset: Creates the view; sets bind variables;
-                 calls Run_Queries.sql
+Author:          Brendan Furey, 22 June 2013
+Description:     Driving script for the Brazil dataset for the fantasy football problem: Creates the
+                 view; sets bind variables; calls Run_Queries.sql
 
-Further details: 'SQL for the Fantasy Football Knapsack Problem'
+Further details: 'SQL for the Fantasy Football Knapsack Problem', June 2013
                  http://aprogrammerwrites.eu/?p=878
-
 ***************************************************************************************************/
+
 PROMPT Point view at Brazil tables and set Brazil bind variables
 CREATE OR REPLACE VIEW positions AS
 SELECT  id,

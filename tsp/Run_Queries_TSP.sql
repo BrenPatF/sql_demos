@@ -2,14 +2,14 @@
 GitHub Project:  sql_demos - Brendan's repo for SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:          Brendan Furey, 12 November 2017
-Description:     Called by the driving scripts to run the SQL; log the execution plans; print 
-                 the logging results
+Author:          Brendan Furey, 14 July 2013
+Description:     Called by the driving scripts to run the SQL for the travelling salesman problem;
+                 log the execution plans; print the logging results
 
-Further details: 'SQL for the Travelling Salesman Problem'
+Further details: 'SQL for the Travelling Salesman Problem', July 2013
                  http://aprogrammerwrites.eu/?p=896
-
 ***************************************************************************************************/
+
 BEGIN
   Utils.Clear_Log;
   Utils.g_debug_level := 0;

@@ -1,0 +1,260 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          24-NOV-2017 07:17:29 Oracle Database 12c 12.2.0.1.0
+
+Elapsed: 00:00:00.00
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.00
+Input Data
+
+        ID ITEM_WEIGHT R_SUM_WEIGHT ITEM_PROFIT R_SUM_PROFIT
+---------- ----------- ------------ ----------- ------------
+         1           3            3          10           10
+         2           4            7          20           30
+         3           5           12          30           60
+         4           6           18          40          100
+
+Elapsed: 00:00:00.00
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.06
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.00
+Tree
+
+NODE       TOT_WEIGHT TOT_PROFIT I PATH
+---------- ---------- ---------- - ------------------------------
+1                   3         10   1
+*2                  7         30 Y 1,2
+*3                  8         40 Y 1,3
+*4                  9         50 Y 1,4
+2                   4         20   2
+*3                  9         50 Y 2,3
+3                   5         30 Y 3
+4                   6         40 Y 4
+
+8 rows selected.
+
+Elapsed: 00:00:00.00
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.11
+Best combinations - RSF with RANK
+
+TOT_WEIGHT TOT_PROFIT PATH                              N_ITEMS N_RECS_TOT N_RECS_LEAF
+---------- ---------- ------------------------------ ---------- ---------- -----------
+         9         50 2,3                                     2          8           5
+         9            1,4                                     2          8           5
+
+Elapsed: 00:00:00.00
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.12
+Best combinations - RSF with KEEP
+
+TOT_WEIGHT TOT_PROFIT    N_ITEMS PATH
+---------- ---------- ---------- ------------------------------
+         9         50          2 2,3
+
+Elapsed: 00:00:00.00
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.10
+PL/SQL Recursion
+Solution 1 (profit 50, weight 9) : 4, 1
+Solution 2 (profit 50, weight 9) : 3, 2
+Profit 50 has 2 solutions...
+
+PL/SQL procedure successfully completed.
+
+Elapsed: 00:00:00.01
+Pipelined Function
+
+COLUMN_VALUE
+----------------------------------------------------------------------------------------------------
+Solution 1 (profit 50, weight 9) : 4, 1
+Solution 2 (profit 50, weight 9) : 3, 2
+
+Elapsed: 00:00:00.01
+
+TEXT
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL_ID  9w0q23f81jwbh, child number 0
+-------------------------------------
+WITH /* XTREE */ rsf (nxt_id, lev, tot_weight, tot_profit, path) AS (
+SELECT id nxt_id, 0 lev, item_weight tot_weight, item_profit
+tot_profit, To_Char (id) path   FROM items  UNION ALL SELECT n.id,
+  r.lev + 1,        r.tot_weight + n.item_weight,        r.tot_profit +
+n.item_profit,        r.path || ',' || To_Char (n.id)   FROM rsf r
+JOIN items n     ON n.id > r.nxt_id    AND r.tot_weight + n.item_weight
+<= 9 ) SEARCH DEPTH FIRST BY nxt_id SET line_no SELECT  /*+
+gather_plan_statistics */        LPad (To_Char(nxt_id), lev + 1, '*')
+node,tot_weight, tot_profit,        CASE WHEN lev >= Lead (lev, 1, lev)
+OVER (ORDER BY line_no) THEN 'Y' END is_leaf,        path   FROM rsf
+ORDER BY line_no
+
+Plan hash value: 2399933116
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                | Name         | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+----------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                         |              |      1 |        |      8 |00:00:00.01 |      13 |       |       |          |
+|   1 |  WINDOW BUFFER                           |              |      1 |      5 |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   2 |   VIEW                                   |              |      1 |      5 |      8 |00:00:00.01 |      13 |       |       |          |
+|   3 |    UNION ALL (RECURSIVE WITH) DEPTH FIRST|              |      1 |        |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   4 |     TABLE ACCESS FULL                    | ITEMS        |      1 |      4 |      4 |00:00:00.01 |       7 |       |       |          |
+|   5 |     NESTED LOOPS                         |              |      2 |      1 |      4 |00:00:00.01 |       6 |       |       |          |
+|   6 |      NESTED LOOPS                        |              |      2 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|   7 |       RECURSIVE WITH PUMP                |              |      2 |        |      8 |00:00:00.01 |       0 |       |       |          |
+|*  8 |       INDEX RANGE SCAN                   | SYS_C0020273 |      8 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|*  9 |      TABLE ACCESS BY INDEX ROWID         | ITEMS        |     10 |      1 |      4 |00:00:00.01 |       2 |       |       |          |
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   8 - access("N"."ID">"R"."NXT_ID")
+   9 - filter("R"."TOT_WEIGHT"+"N"."ITEM_WEIGHT"<=9)
+
+SQL_ID  dy3dqr6fdppv6, child number 0
+-------------------------------------
+WITH /* XRNK */ rsf (nxt_id, lev, tot_weight, tot_profit, path) AS (
+SELECT id, 0, item_weight, item_profit, To_Char (id)   FROM items
+UNION ALL SELECT n.id,        r.lev + 1,        r.tot_weight +
+n.item_weight,        r.tot_profit + n.item_profit,        r.path ||
+',' || To_Char (n.id)   FROM rsf r   JOIN items n     ON n.id >
+r.nxt_id    AND r.tot_weight + n.item_weight <= 9 ) SEARCH DEPTH FIRST
+BY nxt_id SET line_no , leaves_marked AS ( SELECT  tot_weight,
+tot_profit, path, lev,         CASE WHEN lev >= Lead (lev) OVER (ORDER
+BY line_no) THEN 'Y' END is_leaf,         Count(*) OVER () n_recs_tot
+FROM rsf ), all_leaves AS ( SELECT tot_weight, tot_profit, path,
+ Dense_Rank () OVER (ORDER BY tot_profit DESC) rnk_profit,         lev,
+        n_recs_tot,         Count(CASE WHEN is_leaf = 'Y' THEN 1 END)
+OVER () n_recs_leaf   FROM leaves_marked  WHERE is_leaf = 'Y' ) SELECT
+/*+ gather_plan_statistics */        tot_weight, tot_profit, path, lev
++ 1 n_items,        n_recs_tot,
+
+Plan hash value: 1323276335
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                    | Name         | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+--------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                             |              |      1 |        |      2 |00:00:00.01 |      13 |       |       |          |
+|   1 |  SORT ORDER BY                               |              |      1 |      5 |      2 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|*  2 |   VIEW                                       |              |      1 |      5 |      2 |00:00:00.01 |      13 |       |       |          |
+|   3 |    WINDOW SORT                               |              |      1 |      5 |      5 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|*  4 |     VIEW                                     |              |      1 |      5 |      5 |00:00:00.01 |      13 |       |       |          |
+|   5 |      WINDOW BUFFER                           |              |      1 |      5 |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   6 |       VIEW                                   |              |      1 |      5 |      8 |00:00:00.01 |      13 |       |       |          |
+|   7 |        UNION ALL (RECURSIVE WITH) DEPTH FIRST|              |      1 |        |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   8 |         TABLE ACCESS FULL                    | ITEMS        |      1 |      4 |      4 |00:00:00.01 |       7 |       |       |          |
+|   9 |         NESTED LOOPS                         |              |      2 |      1 |      4 |00:00:00.01 |       6 |       |       |          |
+|  10 |          NESTED LOOPS                        |              |      2 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|  11 |           RECURSIVE WITH PUMP                |              |      2 |        |      8 |00:00:00.01 |       0 |       |       |          |
+|* 12 |           INDEX RANGE SCAN                   | SYS_C0020273 |      8 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|* 13 |          TABLE ACCESS BY INDEX ROWID         | ITEMS        |     10 |      1 |      4 |00:00:00.01 |       2 |       |       |          |
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter("RNK_PROFIT"=1)
+   4 - filter("IS_LEAF"='Y')
+  12 - access("N"."ID">"R"."NXT_ID")
+  13 - filter("R"."TOT_WEIGHT"+"N"."ITEM_WEIGHT"<=9)
+
+SQL_ID  9k6m7sfvzb3mv, child number 0
+-------------------------------------
+WITH /* XKEE */  rsf (nxt_id, lev, tot_weight, tot_profit, path) AS (
+SELECT id, 0, item_weight, item_profit, To_Char (id)   FROM items
+UNION ALL SELECT n.id,        r.lev + 1,        r.tot_weight +
+n.item_weight,        r.tot_profit + n.item_profit,        r.path ||
+',' || To_Char (n.id)   FROM rsf r   JOIN items n     ON n.id >
+r.nxt_id    AND r.tot_weight + n.item_weight <= 9 ) SEARCH DEPTH FIRST
+BY nxt_id SET line_no , leaves_marked AS ( SELECT  tot_weight,
+tot_profit, path, lev,         CASE WHEN lev >= Lead (lev) OVER (ORDER
+BY line_no) THEN 'Y' END is_leaf   FROM rsf ) SELECT /*+
+gather_plan_statistics */        Max (tot_weight) KEEP (DENSE_RANK LAST
+ORDER BY tot_profit) tot_weight,        Max (tot_profit) KEEP
+(DENSE_RANK LAST ORDER BY tot_profit) tot_profit,        Max (lev) KEEP
+(DENSE_RANK LAST ORDER BY tot_profit) + 1 n_items,        Max (path)
+KEEP (DENSE_RANK LAST ORDER BY tot_profit) path   FROM leaves_marked
+WHERE is_leaf = 'Y'  ORDER BY 1 DESC
+
+Plan hash value: 4122354712
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Id  | Operation                                  | Name         | Starts | E-Rows | A-Rows |   A-Time   | Buffers |  OMem |  1Mem | Used-Mem |
+------------------------------------------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT                           |              |      1 |        |      1 |00:00:00.01 |      13 |       |       |          |
+|   1 |  SORT AGGREGATE                            |              |      1 |      1 |      1 |00:00:00.01 |      13 |       |       |          |
+|*  2 |   VIEW                                     |              |      1 |      5 |      5 |00:00:00.01 |      13 |       |       |          |
+|   3 |    WINDOW BUFFER                           |              |      1 |      5 |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   4 |     VIEW                                   |              |      1 |      5 |      8 |00:00:00.01 |      13 |       |       |          |
+|   5 |      UNION ALL (RECURSIVE WITH) DEPTH FIRST|              |      1 |        |      8 |00:00:00.01 |      13 |  2048 |  2048 | 2048  (0)|
+|   6 |       TABLE ACCESS FULL                    | ITEMS        |      1 |      4 |      4 |00:00:00.01 |       7 |       |       |          |
+|   7 |       NESTED LOOPS                         |              |      2 |      1 |      4 |00:00:00.01 |       6 |       |       |          |
+|   8 |        NESTED LOOPS                        |              |      2 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|   9 |         RECURSIVE WITH PUMP                |              |      2 |        |      8 |00:00:00.01 |       0 |       |       |          |
+|* 10 |         INDEX RANGE SCAN                   | SYS_C0020273 |      8 |      1 |     10 |00:00:00.01 |       4 |       |       |          |
+|* 11 |        TABLE ACCESS BY INDEX ROWID         | ITEMS        |     10 |      1 |      4 |00:00:00.01 |       2 |       |       |          |
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   2 - filter("IS_LEAF"='Y')
+  10 - access("N"."ID">"R"."NXT_ID")
+  11 - filter("R"."TOT_WEIGHT"+"N"."ITEM_WEIGHT"<=9)
+
+
+Timer Set: Anon Recursion, Constructed at 24 Nov 2017 07:17:29, written at 07:17:29
+===================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000007), CPU (per call): 0.00 (0.000000), calls: 1000, '***' denotes corrected line below]
+
+Timer                         Elapsed         CPU         Calls       Ela/Call       CPU/Call
+-------------------------  ----------  ----------  ------------  -------------  -------------
+Root fetches                     0.00        0.00             4        0.00000        0.00000
+Do_One_Level/r_nxt               0.00        0.00             4        0.00000        0.00000
+Do_One_Level/leaves              0.00        0.00             8        0.00000        0.00000
+Do_One_Level/Do_One_Level        0.00        0.00             4        0.00000        0.00000
+Write output                     0.00        0.00             1        0.00100        0.00000
+(Other)                          0.00        0.00             1        0.00000        0.00000
+-------------------------  ----------  ----------  ------------  -------------  -------------
+Total                            0.00        0.00            22        0.00005        0.00000
+-------------------------  ----------  ----------  ------------  -------------  -------------
+
+Timer Set: Pipelined Recursion, Constructed at 24 Nov 2017 07:17:29, written at 07:17:29
+========================================================================================
+[Timer timed: Elapsed (per call): 0.01 (0.000007), CPU (per call): 0.00 (0.000000), calls: 1000, '***' denotes corrected line below]
+
+Timer                         Elapsed         CPU         Calls       Ela/Call       CPU/Call
+-------------------------  ----------  ----------  ------------  -------------  -------------
+Root fetches                     0.00        0.00             4        0.00000        0.00000
+Do_One_Level/r_nxt               0.00        0.02             4        0.00025        0.00500
+Do_One_Level/leaves              0.00        0.00             8        0.00000        0.00000
+Do_One_Level/Do_One_Level        0.00        0.00             4        0.00000        0.00000
+Write output                     0.00        0.00             1        0.00000        0.00000
+(Other)                          0.00        0.00             1        0.00000        0.00000
+-------------------------  ----------  ----------  ------------  -------------  -------------
+Total                            0.00        0.02            22        0.00005        0.00091
+-------------------------  ----------  ----------  ------------  -------------  -------------
+
+160 rows selected.
+
+Elapsed: 00:00:00.06
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 24-NOV-2017 07:17:29
+
+Elapsed: 00:00:00.00

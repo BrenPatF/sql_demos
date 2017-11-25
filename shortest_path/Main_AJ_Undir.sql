@@ -7,13 +7,13 @@ Author:          Brendan Furey, 19 November 2017
 Description:     Driving script for the AJ dataset (undirected version): Creates the view; calls 
                  Run_Queries_AJ.sql (script implementing ideas in first post below)
 
-Further details: 'SQL for Shortest Path Problems'
+Further details: 'SQL for Shortest Path Problems', April 2015
                  http://aprogrammerwrites.eu/?p=1391
 
-                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach', May 2015
                  http://aprogrammerwrites.eu/?p=1415
-
 ***************************************************************************************************/
+
 PROMPT Point view at Directed table
 CREATE OR REPLACE VIEW arcs_v AS
 SELECT  src,

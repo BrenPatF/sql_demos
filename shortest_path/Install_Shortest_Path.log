@@ -1,19 +1,25 @@
 
 Database             Time                 Version
 -------------------- -------------------- ------------------------------
-Start: ORCL          19-NOV-2017 14:43:53 Oracle Database 12c 12.2.0.1.0
+Start: ORCL          25-NOV-2017 16:00:31 Oracle Database 12c 12.2.0.1.0
 
 Create aj tables...
 Table arcs_aj_dir
+DROP TABLE arcs_aj_dir
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
 
 Table arcs_aj_undir
+DROP TABLE arcs_aj_undir
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -174,14 +180,20 @@ J          I                   4
 40 rows selected.
 
 Create brightkite tables...
+DROP TABLE arcs_brightkite
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
 
+DROP TABLE arcs_brightkite_ext
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -190,14 +202,20 @@ Table created.
 428156 rows created.
 
 Create ca_grqc tables...
+DROP TABLE arcs_ca_grqc
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
 
+DROP TABLE arcs_ca_grqc_ext
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -206,8 +224,11 @@ Table created.
 28980 rows created.
 
 Create GTT approx_min_levs
+DROP TABLE approx_min_levs
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
 
-Table dropped.
 
 
 Table created.
@@ -221,5 +242,5 @@ PL/SQL procedure successfully completed.
 
 'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
 ----------------------------------
-End: 19-NOV-2017 14:43:58
+End: 25-NOV-2017 16:00:33
 

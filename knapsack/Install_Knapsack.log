@@ -1,0 +1,65 @@
+
+Database             Time                 Version
+-------------------- -------------------- ------------------------------
+Start: ORCL          25-NOV-2017 16:00:05 Oracle Database 12c 12.2.0.1.0
+
+Create Single- and Multi-Container Knapsack tables...
+Table items
+DROP TABLE items
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+Table containers
+DROP TABLE containers
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+DROP TYPE con_itm_list_type
+*
+ERROR at line 1:
+ORA-04043: object CON_ITM_LIST_TYPE does not exist
+
+
+
+Type created.
+
+
+Type created.
+
+
+PL/SQL procedure successfully completed.
+
+
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+Grant succeeded.
+
+
+Package created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+'END:'||TO_CHAR(SYSDATE,'DD-MON-YY
+----------------------------------
+End: 25-NOV-2017 16:00:05
+

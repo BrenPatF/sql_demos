@@ -36,6 +36,7 @@ CREATE OR REPLACE DIRECTORY input_dir AS 'C:\input'
 @C_Schema tsp
 @C_Schema bal_num_part
 @C_Schema shortest_path
+@C_Schema knapsack
 
 PROMPT Grants to bren
 GRANT EXECUTE ON UTL_File TO bren
@@ -60,6 +61,6 @@ GRANT SELECT ON v_$database TO demo_user
 GRANT SELECT ON v_$version TO demo_user
 /
 PROMPT Grant role demo_user to demo schemas
-GRANT demo_user TO fan_foot, tsp, bal_num_part, shortest_path
+GRANT demo_user TO fan_foot, tsp, bal_num_part, shortest_path, knapsack
 /
 @..\bren\EndSpool

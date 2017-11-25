@@ -1,15 +1,17 @@
 CREATE OR REPLACE PACKAGE BODY Item_Cats AS
 /**************************************************************************************************
-GitHub Project: sql_demos - Brendan's repo for interesting SQL
-                https://github.com/BrenPatF/sql_demos
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
+                 https://github.com/BrenPatF/sql_demos
 
-Author:         Brendan Furey, 7 July 2013
-Description:    Brendan's pipelined function solution for the knapsack problem with one container,
-                and items having categories with validity bands, as described at
-                http://aprogrammerwrites.eu/?p=878 (SQL for the Fantasy Football Knapsack Problem)
+Author:          Brendan Furey, 22 June 2013
+Description:     Brendan's pipelined function solution for the knapsack problem with one container,
+                 and items having categories with validity bands
 
-                There may be an issue related to package state not being fully reset when called 
-                multiple times in a session
+Further details: 'SQL for the Fantasy Football Knapsack Problem', June 2013
+                 http://aprogrammerwrites.eu/?p=878
+
+                 There may be an issue related to package state not being fully reset when called 
+                 multiple times in a session
 ***************************************************************************************************/
 
 c_cat_all           CONSTANT VARCHAR2(3) := 'AL';
@@ -81,7 +83,13 @@ g_timer                     PLS_INTEGER;
 g_n_recursive_calls         PLS_INTEGER := 0;
 g_n_sols                    PLS_INTEGER := 0;
 
-PROCEDURE Write_Log (p_line VARCHAR2, p_debug_level PLS_INTEGER DEFAULT 0) IS
+/***************************************************************************************************
+
+Write_Log: Logging procedure, writes log line if debug level allow
+
+***************************************************************************************************/
+PROCEDURE Write_Log (p_line         VARCHAR2,                 -- line to write
+                     p_debug_level  PLS_INTEGER DEFAULT 0) IS -- debug level
 BEGIN
 
   IF Utils.g_debug_level >= p_debug_level THEN
@@ -90,7 +98,17 @@ BEGIN
 
 END Write_Log;
 
-FUNCTION Dedup_Hash (p_card PLS_INTEGER, p_key PLS_INTEGER, p_hash int_hash_type) RETURN PLS_INTEGER IS
+/***************************************************************************************************
+
+Dedup_Hash: Test whether a hash key has been used and if so, returns a new key 1 greater, else the 
+            trial key
+
+***************************************************************************************************/
+FUNCTION Dedup_Hash (p_card     PLS_INTEGER,   -- cardinality
+                     p_key      PLS_INTEGER,   -- key
+                     p_hash     int_hash_type) -- hash
+                     RETURN     PLS_INTEGER IS -- deduplicated integer hash key
+
   l_trial_key       PLS_INTEGER := p_card * p_key;
 BEGIN
 
@@ -107,7 +125,13 @@ BEGIN
 
 END Dedup_Hash;
 
-PROCEDURE Pop_Arrays (p_cat_cur SYS_REFCURSOR, p_item_cur SYS_REFCURSOR) IS
+/***************************************************************************************************
+
+Pop_Arrays: Called by entry point Best_N_Sets to fetch the input cursors into global arrays
+
+***************************************************************************************************/
+PROCEDURE Pop_Arrays (p_cat_cur     SYS_REFCURSOR,    -- categories cursor
+                      p_item_cur    SYS_REFCURSOR) IS -- items cursor
   n_cat                     PLS_INTEGER := 0;
   l_price                   PLS_INTEGER;
   l_profit                  PLS_INTEGER;
@@ -209,57 +233,78 @@ BEGIN
 
 END Pop_Arrays;
 
-PROCEDURE Get_Best_Item_List (p_position PLS_INTEGER, p_item_index_beg PLS_INTEGER, p_item_index_end PLS_INTEGER, x_item_hash IN OUT NOCOPY int_hash_type) IS
+/***************************************************************************************************
 
-PROCEDURE Check_Item (p_item_index PLS_INTEGER) IS
+Get_Best_Item_List: Called by Try_Position to get list of best items
 
-  l_item_rec         item_cat_rec_type := g_item_cat_list (p_item_index);
-  l_item_list        num_list_type;
-  Item_Failed        EXCEPTION;
-  l_item_str         VARCHAR2(200) := LPad (l_item_rec.id, (p_position)*3, '.') || '-' || l_item_rec.cat_id  || '-' || l_item_rec.price  || '-' || l_item_rec.profit;
+***************************************************************************************************/
+PROCEDURE Get_Best_Item_List (p_position                     PLS_INTEGER, 
+                              p_item_index_beg               PLS_INTEGER,
+                              p_item_index_end               PLS_INTEGER,
+                              x_item_hash      IN OUT NOCOPY int_hash_type) IS
 
-  FUNCTION Price_LB (p_position PLS_INTEGER) RETURN PLS_INTEGER IS
+  /***************************************************************************************************
+  
+  Check_Item: Local procedure to check an item. If it passes adds it to x_item_hash
+  
+  ***************************************************************************************************/
+  PROCEDURE Check_Item (p_item_index PLS_INTEGER) IS -- item index
+  
+    l_item_rec         item_cat_rec_type := g_item_cat_list (p_item_index);
+    l_item_list        num_list_type;
+    Item_Failed        EXCEPTION;
+    l_item_str         VARCHAR2(200) := LPad (l_item_rec.id, (p_position)*3, '.') || '-' || l_item_rec.cat_id  || '-' || l_item_rec.price  || '-' || l_item_rec.profit;
+  
+  /***************************************************************************************************
+  
+  Price_LB, Profit_UB: Two local functions returning lower bound on price, upper bound on profit 
+                       respectively for input position, projected for remaining positions
+  
+  ***************************************************************************************************/
+    FUNCTION Price_LB (p_position PLS_INTEGER)   -- position
+                       RETURN     PLS_INTEGER IS -- lower bound on price remaining
+    BEGIN
+  
+      RETURN g_min_price_togo (p_position);
+        
+    END Price_LB;
+  
+    FUNCTION Profit_UB (p_position PLS_INTEGER)   -- position
+                        RETURN     PLS_INTEGER IS -- upper bound on price remaining
+    BEGIN
+  
+      RETURN g_max_profit_togo (p_position);
+  
+    END Profit_UB;
+  
   BEGIN
-
-    RETURN g_min_price_togo (p_position);
+  
+    IF l_item_rec.price + g_trial_sol.price + Price_LB (p_position) > g_max_price THEN
+  
+      l_item_str := l_item_str || ' [price failed ' || (l_item_rec.price + g_trial_sol.price) || ']';
+      IF (g_set_size - p_position) = 0 THEN
+        Write_Log ('Solution fails with price of ' || (l_item_rec.price + g_trial_sol.price), 1);
+      END IF;
+      RAISE Item_Failed;
+    END IF;
+  
+    IF l_item_rec.profit + g_trial_sol.profit + Profit_UB (p_position) <= g_nth_profit THEN
+      l_item_str := l_item_str || ' [profit failed ' || (l_item_rec.profit + g_trial_sol.profit) || ', nth = ' || g_nth_profit || ']';
+      IF (g_set_size - p_position) = 0 THEN
+        Write_Log ('Solution fails with profit of ' || (l_item_rec.profit + g_trial_sol.profit), 1);
+        g_n_sols := g_n_sols + 1;
+      END IF;
+      RAISE Item_Failed;
+    END IF;
+  
+    x_item_hash (Dedup_Hash (p_card => g_keep_size, p_key => l_item_rec.profit + g_trial_sol.profit, p_hash => x_item_hash)) := p_item_index;
+  
+  EXCEPTION
+  
+    WHEN Item_Failed THEN
+      Write_Log (l_item_str, 2);
       
-  END Price_LB;
-
-  FUNCTION Profit_UB (p_position PLS_INTEGER) RETURN PLS_INTEGER IS
-  BEGIN
-
-    RETURN g_max_profit_togo (p_position);
-
-  END Profit_UB;
-
-BEGIN
-
-  IF l_item_rec.price + g_trial_sol.price + Price_LB (p_position) > g_max_price THEN
-
-    l_item_str := l_item_str || ' [price failed ' || (l_item_rec.price + g_trial_sol.price) || ']';
-    IF (g_set_size - p_position) = 0 THEN
-      Write_Log ('Solution fails with price of ' || (l_item_rec.price + g_trial_sol.price), 1);
-    END IF;
-    RAISE Item_Failed;
-  END IF;
-
-  IF l_item_rec.profit + g_trial_sol.profit + Profit_UB (p_position) <= g_nth_profit THEN
-    l_item_str := l_item_str || ' [profit failed ' || (l_item_rec.profit + g_trial_sol.profit) || ', nth = ' || g_nth_profit || ']';
-    IF (g_set_size - p_position) = 0 THEN
-      Write_Log ('Solution fails with profit of ' || (l_item_rec.profit + g_trial_sol.profit), 1);
-      g_n_sols := g_n_sols + 1;
-    END IF;
-    RAISE Item_Failed;
-  END IF;
-
-  x_item_hash (Dedup_Hash (p_card => g_keep_size, p_key => l_item_rec.profit + g_trial_sol.profit, p_hash => x_item_hash)) := p_item_index;
-
-EXCEPTION
-
-  WHEN Item_Failed THEN
-    Write_Log (l_item_str, 2);
-    
-END Check_Item;
+  END Check_Item;
 
 BEGIN
 
@@ -271,6 +316,11 @@ BEGIN
 
 END Get_Best_Item_List;
 
+/***************************************************************************************************
+
+Add_Solution: Called by Add_Item_To_Trial to add a solution when all positions are filled
+
+***************************************************************************************************/
 PROCEDURE Add_Solution IS
   l_nth_index        PLS_INTEGER;
 BEGIN
@@ -292,7 +342,13 @@ BEGIN
 
 END Add_Solution;
 
-PROCEDURE Add_Item_To_Trial (p_position PLS_INTEGER, p_item_index PLS_INTEGER) IS
+/***************************************************************************************************
+
+Add_Item_To_Trial: Called by Try_Position to add an item to a trial solution for a position
+
+***************************************************************************************************/
+PROCEDURE Add_Item_To_Trial (p_position     PLS_INTEGER,    -- position
+                             p_item_index   PLS_INTEGER) IS -- item index
 
   l_item_rec          item_cat_rec_type := g_item_cat_list (p_item_index);
 
@@ -316,7 +372,16 @@ BEGIN
    
 END Add_Item_To_Trial;
 
-FUNCTION Try_Position (p_position PLS_INTEGER, p_n_curr_cat PLS_INTEGER, p_cat_index_beg PLS_INTEGER, p_item_index_beg PLS_INTEGER) RETURN BOOLEAN IS
+/***************************************************************************************************
+
+Try_Position: Recursive function to find the solutions depth-first wise over the positions
+
+***************************************************************************************************/
+FUNCTION Try_Position (p_position           PLS_INTEGER, -- position
+                       p_n_curr_cat         PLS_INTEGER, -- current category
+                       p_cat_index_beg      PLS_INTEGER, -- start category index
+                       p_item_index_beg     PLS_INTEGER) -- start item index
+                       RETURN               BOOLEAN IS   -- TRUE if 
 
   l_item_hash       int_hash_type;
   l_item_index      PLS_INTEGER;
@@ -398,6 +463,11 @@ BEGIN
 
 END Try_Position;
 
+/***************************************************************************************************
+
+Write_Sols: Instrumentation procedure to write solutions to log
+
+***************************************************************************************************/
 PROCEDURE Write_Sols IS
   l_profit    PLS_INTEGER;
   l_index     PLS_INTEGER;
@@ -427,12 +497,18 @@ BEGIN
 
 END Write_Sols;
 
-FUNCTION Best_N_Sets (  p_keep_size     PLS_INTEGER, 
-                        p_max_calls     PLS_INTEGER, 
-                        p_n_size        PLS_INTEGER, 
-                        p_max_price     PLS_INTEGER, 
-                        p_cat_cur       SYS_REFCURSOR, 
-                        p_item_cur      SYS_REFCURSOR) RETURN sol_detail_list_type PIPELINED IS
+/***************************************************************************************************
+
+Best_N_Sets: Entry point function returning best N solutions found
+
+***************************************************************************************************/
+FUNCTION Best_N_Sets (  p_keep_size     PLS_INTEGER,   -- number of solutions to retain at given stage
+                        p_max_calls     PLS_INTEGER,   -- maximum number of calls before aborting
+                        p_n_size        PLS_INTEGER,   -- size of desired solution set
+                        p_max_price     PLS_INTEGER,   -- maximum price 
+                        p_cat_cur       SYS_REFCURSOR, -- categories cursor
+                        p_item_cur      SYS_REFCURSOR) -- items cursor
+                        RETURN          sol_detail_list_type PIPELINED IS -- solution detail record list
 
   l_sol_detail_rec          sol_detail_rec_type;
   l_position                PLS_INTEGER := 1;

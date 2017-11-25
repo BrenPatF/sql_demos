@@ -1,19 +1,18 @@
 @..\bren\InitSpool Install_Shortest_Path
 /***************************************************************************************************
-GitHub Project: sql_demos - Brendan's repo for interesting SQL
-                https://github.com/BrenPatF/sql_demos
+GitHub Project:  sql_demos - Brendan's repo for interesting SQL
+                 https://github.com/BrenPatF/sql_demos
 
-Author:         Brendan Furey, 19 November 2017
-Description:    Installation script for shortest_path schema for the project. Schema shortest_path 
-                is for the SQL problem described in the articles below. It creates and populates the
-                tables used by the different example problems; gathers schema statistics.
+Author:          Brendan Furey, 19 November 2017
+Description:     Installation script for shortest_path schema for the project. Schema shortest_path 
+                 is for the SQL problem described in the articles below. It creates and populates the
+                 tables used by the different example problems; gathers schema statistics.
 
-Further details: 'SQL for Shortest Path Problems'
+Further details: 'SQL for Shortest Path Problems', April 2015
                  http://aprogrammerwrites.eu/?p=1391
 
-                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach'
+                 'SQL for Shortest Path Problems 2: A Branch and Bound Approach', May 2015
                  http://aprogrammerwrites.eu/?p=1415
-
 ***************************************************************************************************/
 
 @Setup_AJ

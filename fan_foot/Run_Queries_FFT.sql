@@ -2,14 +2,14 @@
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
 
-Author:          Brendan Furey, 11 November 2017
+Author:          Brendan Furey, 22 June 2013
 Description:     Called by the driving scripts to run the two SQLs (direct and pipelined function);
                  log the execution plans; print the logging results
 
-Further details: 'SQL for the Fantasy Football Knapsack Problem'
+Further details: 'SQL for the Fantasy Football Knapsack Problem', June 2013
                  http://aprogrammerwrites.eu/?p=878
-
 ***************************************************************************************************/
+
 BEGIN
   Utils.Clear_Log;
   Utils.g_debug_level := 0;

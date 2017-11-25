@@ -9,10 +9,10 @@ Description:    Installation script for fan_foot schema for the project. Schema 
                 by the two different example problems; gathers schema statistics; creates the
                  package used by the pipelined function solution.
 
-Further details: 'SQL for the Fantasy Football Knapsack Problem'
+Further details: 'SQL for the Fantasy Football Knapsack Problem', June 2013
                  http://aprogrammerwrites.eu/?p=878
-
 ***************************************************************************************************/
+
 @Setup_Bra
 @Setup_Eng
 EXECUTE DBMS_Stats.Gather_Schema_Stats(ownname => 'FAN_FOOT');
