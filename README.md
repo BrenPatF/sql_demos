@@ -13,24 +13,17 @@ the problem-specific scripts in a separate folder for each one.
 
 Links to blog or other sources:
 
-1. knapsack:      'A Simple SQL Solution for the Knapsack Problem (SKP-1)', January 2013
-                  http://aprogrammerwrites.eu/?p=560
-                  'An SQL Solution for the Multiple Knapsack Problem (SKP-m)', January 2013
-                  http://aprogrammerwrites.eu/?p=635
+1. knapsack:      <a href="http://aprogrammerwrites.eu/?p=560" target="_blank">A Simple SQL Solution for the Knapsack Problem (SKP-1)</a>, January 2013
+                  <a href="http://aprogrammerwrites.eu/?p=635" target="_blank">An SQL Solution for the Multiple Knapsack Problem (SKP-m)</a>, January 2013
 
-2. bal_num_part: 'SQL for the Balanced Number Partitioning Problem', May 2013
-                  http://aprogrammerwrites.eu/?p=803
+2. bal_num_part:  <a href="http://aprogrammerwrites.eu/?p=803" target="_blank">SQL for the Balanced Number Partitioning Problem</a>, May 2013
 
-3. fan_foot:      'SQL for the Fantasy Football Knapsack Problem', June 2013
-                  http://aprogrammerwrites.eu/?p=878
+3. fan_foot:      <a href="http://aprogrammerwrites.eu/?p=878" target="_blank">SQL for the Fantasy Football Knapsack Problem</a>, June 2013
 
-4. tsp:           'SQL for the Travelling Salesman Problem', July 2013
-                  http://aprogrammerwrites.eu/?p=896
+4. tsp:           <a href="http://aprogrammerwrites.eu/?p=896" target="_blank">SQL for the Travelling Salesman Problem</a>, July 2013
 
-5. shortest_path: 'SQL for Shortest Path Problems', April 2015
-                  http://aprogrammerwrites.eu/?p=1391
-                  'SQL for Shortest Path Problems 2: A Branch and Bound Approach', May 2015
-                  http://aprogrammerwrites.eu/?p=1415
+5. shortest_path: <a href="http://aprogrammerwrites.eu/?p=1391" target="_blank">SQL for Shortest Path Problems</a>, April 2015
+                  <a href="http://aprogrammerwrites.eu/?p=1415" target="_blank">SQL for Shortest Path Problems 2: A Branch and Bound Approach</a>, May 2015
 
 Pre-requisites
 ==============
