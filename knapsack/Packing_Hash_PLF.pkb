@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE BODY Packing_PLF IS
+CREATE OR REPLACE PACKAGE BODY Packing_Hash_PLF IS
 /***************************************************************************************************
 GitHub Project:  sql_demos - Brendan's repo for interesting SQL
                  https://github.com/BrenPatF/sql_demos
@@ -6,22 +6,31 @@ GitHub Project:  sql_demos - Brendan's repo for interesting SQL
 Author:          Brendan Furey, 1 January 2013
 Description:     Brendan's pipelined function solution for the knapsack problem with one container.
                  Note that it reads the items from a view, and takes limit as parameter. This 
-                 version uses a nested table with linked varray to store the solutions, and is the 
-                 one used in the article below
+                 version uses an associative array for the solutions, which can facilitate ordering
+                 in PL/SQL
 
 Further details: 'A Simple SQL Solution for the Knapsack Problem (SKP-1)', January 2013
                  http://aprogrammerwrites.eu/?p=560
 ***************************************************************************************************/
 
-FUNCTION Best_Fits (p_weight_limit NUMBER) RETURN SYS.ODCIVarchar2List PIPELINED IS
+/***************************************************************************************************
+
+Best_Fits: Entry point function returning solutions found as strings, format: 
+            'Solution 1 (profit P, weight w) : item_1, item_2' etc.
+
+***************************************************************************************************/
+FUNCTION Best_Fits (p_weight_limit  NUMBER)               -- weight limit
+                    RETURN          SYS.ODCIVarchar2List  -- list of solutions
+                    PIPELINED IS
 
   TYPE item_type IS RECORD (
                         item_id                 PLS_INTEGER,
                         item_index_parent       PLS_INTEGER,
                         weight_to_node          NUMBER);
   TYPE item_tree_type IS        TABLE OF item_type;
-  g_solution_list               SYS.ODCINumberList;
+  TYPE leaf_hash_type IS        TABLE OF SYS.ODCINumberList INDEX BY PLS_INTEGER; -- NUMBER unsupported
 
+  g_leaf_hash                   leaf_hash_type;
   g_timer                       PLS_INTEGER := Timer_Set.Construct ('Pipelined Recursion');
 
   i                             PLS_INTEGER := 0;
@@ -30,13 +39,20 @@ FUNCTION Best_Fits (p_weight_limit NUMBER) RETURN SYS.ODCIVarchar2List PIPELINED
   g_item                        item_type;
   l_weight                      PLS_INTEGER;
   l_weight_new                  PLS_INTEGER;
-  l_best_profit                 PLS_INTEGER := -1;
+  l_hash_key                    VARCHAR2(12);
+  l_profit                      PLS_INTEGER;
   l_sol                         VARCHAR2(4000);
   l_sol_cnt                     PLS_INTEGER := 0;
 
-  FUNCTION Add_Node (  p_item_id               PLS_INTEGER,
-                       p_item_index_parent     PLS_INTEGER, 
-                       p_weight_to_node        NUMBER) RETURN PLS_INTEGER IS
+  /***************************************************************************************************
+
+  Add_Node: Called by Do_One_Level to add a node to the item tree, returning tree size
+
+  ***************************************************************************************************/
+  FUNCTION Add_Node (  p_item_id               PLS_INTEGER,   -- item id
+                       p_item_index_parent     PLS_INTEGER,   -- parent item index
+                       p_weight_to_node        NUMBER)        -- weight to node
+                       RETURN                  PLS_INTEGER IS -- tree size
   BEGIN
 
     g_item.item_id := p_item_id;
@@ -56,7 +72,16 @@ FUNCTION Best_Fits (p_weight_limit NUMBER) RETURN SYS.ODCIVarchar2List PIPELINED
 
   END Add_Node;
 
-  PROCEDURE Do_One_Level (p_tree_index PLS_INTEGER, p_item_id PLS_INTEGER, p_tot_weight PLS_INTEGER, p_tot_profit PLS_INTEGER) IS
+  /***************************************************************************************************
+
+  Do_One_Level: Called by main block to do one level of recursion, using cursor over items with id
+                > than that of input item
+
+  ***************************************************************************************************/
+  PROCEDURE Do_One_Level (p_tree_index  PLS_INTEGER,    -- tree index
+                          p_item_id     PLS_INTEGER,    -- item id
+                          p_tot_weight  PLS_INTEGER,    -- total weight
+                          p_tot_profit  PLS_INTEGER) IS -- total profit
 
     CURSOR c_nxt IS
     SELECT id, item_weight, item_profit
@@ -79,15 +104,16 @@ FUNCTION Best_Fits (p_weight_limit NUMBER) RETURN SYS.ODCIVarchar2List PIPELINED
 
     IF l_is_leaf THEN
 
-      IF p_tot_profit > l_best_profit THEN
+      IF g_leaf_hash.EXISTS (p_tot_profit) THEN
 
-        g_solution_list := SYS.ODCINumberList (p_tree_index);
-        l_best_profit := p_tot_profit;
+        l_index_list := g_leaf_hash (p_tot_profit);
+        l_index_list.Extend;
+        l_index_list (l_index_list.COUNT) := p_tree_index;
+        g_leaf_hash (p_tot_profit) := l_index_list;
 
-      ELSIF p_tot_profit = l_best_profit THEN
+      ELSE
 
-        g_solution_list.Extend;
-        g_solution_list (g_solution_list.COUNT) := p_tree_index;
+        g_leaf_hash (p_tot_profit) := SYS.ODCINumberList (p_tree_index);
 
       END IF;
 
@@ -105,11 +131,14 @@ BEGIN
 
   END LOOP;
 
-  FOR i IN 1..g_solution_list.COUNT LOOP
+  DBMS_Output.Put_Line (l_profit);
+  l_profit := g_leaf_hash.LAST;
 
-    j := g_solution_list(i);
-    l_sol := NULL;
+  FOR i IN 1..g_leaf_hash (l_profit).COUNT LOOP
+
+    j := g_leaf_hash (l_profit)(i);
     l_weight := g_item_tree (j).weight_to_node;
+    l_sol := NULL;
     WHILE j != 0 LOOP
 
       l_sol := l_sol || g_item_tree (j).item_id || ', ';
@@ -117,19 +146,14 @@ BEGIN
 
     END LOOP;
     l_sol_cnt := l_sol_cnt + 1;
-    PIPE ROW ('Solution ' || l_sol_cnt || ' (profit ' || l_best_profit || ', weight ' || l_weight || ') : ' || RTrim (l_sol, ', '));
+    PIPE ROW ('Solution ' || l_sol_cnt || ' (profit ' || l_profit || ', weight ' || l_weight || ') : ' || RTrim (l_sol, ', '));
 
   END LOOP;
 
   Timer_Set.Increment_Time (g_timer,  'Write output');
   Timer_Set.Write_Times (g_timer);
 
-EXCEPTION
-  WHEN OTHERS THEN
-    Timer_Set.Write_Times (g_timer);
-    RAISE;
-
 END Best_Fits;
 
-END Packing_PLF;
+END Packing_Hash_PLF;
 /

@@ -234,9 +234,14 @@ BEGIN
 
 END;
 /
-PROMPT Pipelined Function
+PROMPT Pipelined Function using nested table with linked varray (as in blog article)
 COLUMN COLUMN_VALUE FORMAT A100
 SELECT *
   FROM TABLE (Packing_PLF.Best_Fits (9))
+/
+PROMPT Pipelined Function using associative array
+COLUMN COLUMN_VALUE FORMAT A100
+SELECT *
+  FROM TABLE (Packing_Hash_PLF.Best_Fits (9))
 /
 @..\bren\L_Log_Default
