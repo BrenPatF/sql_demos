@@ -30,6 +30,8 @@ Links to blog or other sources:
 <a href="http://aprogrammerwrites.eu/?p=1391" target="_blank">SQL for Shortest Path Problems</a>, April 2015<br />
 <a href="http://aprogrammerwrites.eu/?p=1415" target="_blank">SQL for Shortest Path Problems 2: A Branch and Bound Approach</a>, May 2015
 
+Here is a summary article that embeds all of the above plus another couple of relevant articles: <a href="http://aprogrammerwrites.eu/?p=2232" target="_blank">Knapsacks and Networks in SQL</a>, December 2017
+
 Pre-requisites
 ==============
 In order to install this project you need to have SYS access to an Oracle database, minimum version
