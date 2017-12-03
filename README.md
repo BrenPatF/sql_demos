@@ -1,4 +1,4 @@
-# sql_demos - Brendan's repo for interesting SQL
+# sql_demos - Brendan's repo for interesting SQL<div id="topOfVisibleArea"></div>
 
 This project stores the SQL code for solutions to interesting problems I have looked at on my blog,
 or elsewhere. It includes installation scripts with object creation and data setup, and scripts to
