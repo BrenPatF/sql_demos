@@ -1,8 +1,10 @@
 # sql_demos - Brendan's repo for interesting SQL<div id="topOfVisibleArea"></div>
-
+<img src="mountains.png">
 This project stores the SQL code for solutions to interesting problems I have looked at on my blog,
 or elsewhere. It includes installation scripts with object creation and data setup, and scripts to
 run the SQL on the included datasets.
+
+:file_cabinet: :slot_machine: :question: :outbox_tray:
 
 The idea is that anyone with the pre-requisites should be able to reproduce my results within a few 
 minutes of downloading the repo.
